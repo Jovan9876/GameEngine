@@ -50,6 +50,11 @@ struct Gravity {
     float currentVelY = 0.0f;
 };
 
+struct ScreenWrap {
+    bool wrapX{};
+    float marginX{};    // Extra pixels before wrapping lower value sooner wrapping
+};
+
 struct Camera {
     SDL_FRect view;
     float worldWidth{};

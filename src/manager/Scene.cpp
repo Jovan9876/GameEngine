@@ -7,6 +7,7 @@
 
 Scene::Scene(const char *sceneName, const char *mapPath, const int windowWidth, const int windowHeight) : name(sceneName) {
     // Load our map
+    world.setWindowSize(windowWidth, windowHeight);
     world.getMap().load(mapPath, TextureManager::load("../asset/tileset.png"));
     for (auto &collider: world.getMap().colliders) {
         auto &e = world.createEntity();
@@ -68,6 +69,8 @@ Scene::Scene(const char *sceneName, const char *mapPath, const int windowWidth, 
 
     player.addComponent<PlayerTag>();
     player.addComponent<Gravity>(200.0f,200.0f);
+
+    player.addComponent<ScreenWrap>(true, 0.0f);
 
     auto &spawner(world.createEntity());
     Transform t = spawner.addComponent<Transform>(Vector2D(windowWidth / 2, windowHeight - 5), 0.0f, 1.0f);

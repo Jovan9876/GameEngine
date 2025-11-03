@@ -19,6 +19,7 @@
 #include "DestructionSystem.h"
 #include "SpawnTimerSystem.h"
 #include "GravitySystem.h"
+#include "ScreenWrapSystem.h"
 
 
 class World {
@@ -35,6 +36,9 @@ class World {
     SpawnTimerSystem spawnTimerSystem;
     DestructionSystem destructionSystem;
     GravitySystem gravitySystem;
+    ScreenWrapSystem screenWrapSystem;
+    int windowWidth{0};
+    int windowHeight{0};
 
 public:
     World();
@@ -43,6 +47,7 @@ public:
         keyboardInputSystem.update(entities, event);
         movementSystem.update(entities, dt);
         gravitySystem.update(entities, dt);
+        screenWrapSystem.update(entities);
         collisionSystem.update(*this);
         animationSystem.update(entities, dt);
         cameraSystem.update(entities);
@@ -50,6 +55,12 @@ public:
         destructionSystem.update(entities);
         synchronizeEntities();
         cleanup();
+    }
+
+    void setWindowSize(int w, int h) {
+        windowWidth = w;
+        windowHeight = h;
+        screenWrapSystem.setWindowSize(w, h);
     }
 
     void render() {
