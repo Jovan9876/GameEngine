@@ -45,8 +45,8 @@ struct Animation {
 };
 
 struct Gravity {
-    float acceleration{};
-    float maxFallSpeed{};
+    float accel{};
+    float maxAccel{};
     float currentVelY = 0.0f;
 };
 

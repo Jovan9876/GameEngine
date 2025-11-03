@@ -20,11 +20,11 @@ public:
                 auto& g = e->getComponent<Gravity>();
 
                 // accelerate downward
-                g.currentVelY += g.acceleration * dt;
+                g.currentVelY += g.accel * dt;
 
                 // clamp to max fall speed
-                if (g.currentVelY > g.maxFallSpeed) {
-                    g.currentVelY = g.maxFallSpeed;
+                if (g.currentVelY > g.maxAccel) {
+                    g.currentVelY = g.maxAccel;
                 }
 
                 // move the entity down
