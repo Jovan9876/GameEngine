@@ -26,7 +26,7 @@ struct Velocity {
 };
 
 struct Sprite {
-    SDL_Texture *texture = nullptr;
+    SDL_Texture* texture = nullptr;
     SDL_FRect src{};
     SDL_FRect dst{};
 };
@@ -42,6 +42,12 @@ struct Animation {
     float time{}; // Time accumulated for the current frame
     int currentFrame{}; // Index of the current frame in the clip
     float speed = 0.1f;
+};
+
+struct Gravity {
+    float acceleration{};
+    float maxFallSpeed{};
+    float currentVelY = 0.0f;
 };
 
 struct Camera {
@@ -61,7 +67,8 @@ struct SceneState {
     int coinsCollected = 0;
 };
 
-struct PlayerTag{};
-struct ProjectileTag{};
+struct PlayerTag {};
+
+struct ProjectileTag {};
 
 #endif //PROJECT_COMPONENT_H

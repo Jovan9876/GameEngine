@@ -67,7 +67,7 @@ Scene::Scene(const char *sceneName, const char *mapPath, const int windowWidth, 
     playerCollider.rect.h = playerDst.h;
 
     player.addComponent<PlayerTag>();
-
+    player.addComponent<Gravity>(200.0f,200.0f);
 
     auto &spawner(world.createEntity());
     Transform t = spawner.addComponent<Transform>(Vector2D(windowWidth / 2, windowHeight - 5), 0.0f, 1.0f);

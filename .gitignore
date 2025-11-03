@@ -1,52 +1,28 @@
-# --------------------------------------------------
-# CLion / JetBrains IDE
-# --------------------------------------------------
 .idea/
+cmake-build-*/
 *.iml
 
-# --------------------------------------------------
-# CMake build output
-# --------------------------------------------------
-cmake-build-*/
+# CMake
 CMakeCache.txt
 CMakeFiles/
-CMakeScripts/
-Makefile
 cmake_install.cmake
 install_manifest.txt
-compile_commands.json
+Makefile
 CTestTestfile.cmake
-
-# --------------------------------------------------
-# Build system / intermediate
-# --------------------------------------------------
 build/
-out/
-*.ninja
-.ninja_deps
-.ninja_log
 
-# --------------------------------------------------
-# Binaries / libraries (don’t commit compiled stuff)
-# --------------------------------------------------
+# Executables and Libraries
 *.exe
 *.dll
-*.lib
-*.pdb
 *.so
 *.dylib
+*.o
 *.a
+*.lib
 
-# --------------------------------------------------
-# Logs / temp files
-# --------------------------------------------------
-*.log
+# Other temporary files
+*~
+*.bak
+*.swp
+*.swo
 *.tmp
-
-# --------------------------------------------------
-# OS-specific junk
-# --------------------------------------------------
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini

@@ -18,6 +18,8 @@
 #include "CameraSystem.h"
 #include "DestructionSystem.h"
 #include "SpawnTimerSystem.h"
+#include "GravitySystem.h"
+
 
 class World {
     Map map;
@@ -32,6 +34,7 @@ class World {
     EventManager eventManager;
     SpawnTimerSystem spawnTimerSystem;
     DestructionSystem destructionSystem;
+    GravitySystem gravitySystem;
 
 public:
     World();
@@ -39,6 +42,7 @@ public:
     void update(float dt, const SDL_Event &event) {
         keyboardInputSystem.update(entities, event);
         movementSystem.update(entities, dt);
+        gravitySystem.update(entities, dt);
         collisionSystem.update(*this);
         animationSystem.update(entities, dt);
         cameraSystem.update(entities);
