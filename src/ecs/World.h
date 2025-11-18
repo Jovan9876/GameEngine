@@ -19,7 +19,10 @@
 #include "DestructionSystem.h"
 #include "SpawnTimerSystem.h"
 #include "GravitySystem.h"
+#include "HUDSystem.h"
+#include "PreRenderSystem.h"
 #include "ScreenWrapSystem.h"
+#include "UIRenderSystem.h"
 
 
 class World {
@@ -40,6 +43,11 @@ class World {
     int windowWidth{0};
     int windowHeight{0};
 
+    //HUD
+    UIRenderSystem uiRenderSystem;
+    HUDSystem hudSystem;
+    PreRenderSystem preRenderSystem;
+
 public:
     World();
 
@@ -53,6 +61,11 @@ public:
         cameraSystem.update(entities);
         spawnTimerSystem.update(entities, dt);
         destructionSystem.update(entities);
+        hudSystem.update(entities);
+
+        //put this last
+        preRenderSystem.update(entities);
+
         synchronizeEntities();
         cleanup();
     }
@@ -71,6 +84,7 @@ public:
             }
         }
         renderSystem.render(entities);
+        uiRenderSystem.render(entities);
     }
 
     Entity &createEntity() {

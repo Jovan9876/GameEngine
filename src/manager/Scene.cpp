@@ -99,5 +99,22 @@ Scene::Scene(const char *sceneName, const char *mapPath, const int windowWidth, 
     auto &state(world.createEntity());
     state.addComponent<SceneState>();
 
+    createScoreLabel();
 
 }
+
+Entity &Scene::createScoreLabel() {
+    auto& playerScoreLabel(world.createEntity());
+    Label label = {
+        "Test String",
+        AssetManager::getFont("arial"),
+        {255, 255, 255, 255},
+        LabelType::Score,
+        "playerScore"
+    };
+    TextureManager::loadLabel(label);
+    playerScoreLabel.addComponent<Label>(label);
+    playerScoreLabel.addComponent<Transform>(Vector2D(10, 10), 0.0f, 1.0f);
+    return playerScoreLabel;
+}
+

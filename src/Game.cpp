@@ -53,10 +53,17 @@ void Game::init(const char *title, int width, int height, bool fullscreen) {
         b = 0;
         a = 255;
 
+        if (TTF_Init() != 1) {
+            std::cout << "TTF_Init failed." << std::endl;
+        }
+
         isRunning = true;
     } else {
         isRunning = false;
     }
+    //load fonts
+    AssetManager::loadFont("arial", "../asset/fonts/arial.ttf", 16);
+
 
     // Load assets
     AssetManager::loadAnimation("player", "../asset/animations/vampire_animations.xml");

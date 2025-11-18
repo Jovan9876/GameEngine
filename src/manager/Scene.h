@@ -27,6 +27,8 @@ public:
 private:
     std::string name;
 
+    Entity& createScoreLabel();
+
     void createProjectile(Vector2D pos, Vector2D dir, int speed);
 };
 
