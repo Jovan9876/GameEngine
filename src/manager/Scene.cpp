@@ -112,6 +112,10 @@ Entity &Scene::createScoreLabel() {
         LabelType::Score,
         "playerScore"
     };
+
+    ScoreTracker scoreTracker = {};
+    playerScoreLabel.addComponent<ScoreTracker>(scoreTracker);
+
     TextureManager::loadLabel(label);
     playerScoreLabel.addComponent<Label>(label);
     playerScoreLabel.addComponent<Transform>(Vector2D(10, 10), 0.0f, 1.0f);

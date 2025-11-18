@@ -29,11 +29,19 @@ public:
         for (auto& e : entities) {
             if (e->hasComponent<Label>()) {
                 auto& label = e.get()->getComponent<Label>();
+                auto& scoreTracker = e.get()->getComponent<ScoreTracker>();
 
                 //update player position
                 if (label.type == LabelType::Score) {
                     std::stringstream ss;
-                    ss << "Player position aka Score" << playerTransform.position.y;
+                    //Put score calculation here
+                    if (playerTransform.position.y > scoreTracker.maxHeight) {
+                        //update score
+                        scoreTracker.maxHeight = playerTransform.position.y;
+                        scoreTracker.score = static_cast<int>(scoreTracker.maxHeight / 10);
+                    };
+                    // ss << "Player position aka Score" << playerTransform.position.y;
+                    ss << "Player position aka Score: " << scoreTracker.score;
                     label.text = ss.str();
                     label.dirty = true;
                 }

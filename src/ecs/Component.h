@@ -118,6 +118,11 @@ struct Label {
     bool dirty = false;
 };
 
+struct ScoreTracker {
+    float maxHeight = 0.0f;
+    int score = 0;
+};
+
 struct PlayerTag {};
 
 struct ProjectileTag {};
