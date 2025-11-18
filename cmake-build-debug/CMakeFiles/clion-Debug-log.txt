@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2025.2.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2025.2.1/bin/ninja/win/x64/ninja.exe" -G Ninja -S C:\Users\Jovan\Desktop\COMP8552\GameEngine -B C:\Users\Jovan\Desktop\COMP8552\GameEngine\cmake-build-debug
+"C:\Program Files\JetBrains\CLion 2025.2.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2025.2.1/bin/ninja/win/x64/ninja.exe" -DSDL3_PATH:PATH=C:/Users/Trevo/OneDrive/Desktop/sdl -DSDL3_IMAGE_PATH:PATH=C:\Users\Trevo\OneDrive\Desktop\sdl3 -G Ninja -S C:\Users\Trevo\OneDrive\Documents\GitHub\GameEngine -B C:\Users\Trevo\OneDrive\Documents\GitHub\GameEngine\cmake-build-debug
 -- Configuring done (0.3s)
--- Generating done (0.1s)
--- Build files have been written to: C:/Users/Jovan/Desktop/COMP8552/GameEngine/cmake-build-debug
+-- Generating done (0.0s)
+-- Build files have been written to: C:/Users/Trevo/OneDrive/Documents/GitHub/GameEngine/cmake-build-debug

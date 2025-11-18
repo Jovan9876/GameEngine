@@ -35,7 +35,8 @@ add_executable(Project src/main.cpp
         src/utils/CollisionObservers.cpp
         src/vendor/tinyxml2.cpp
         src/manager/AssetManager.cpp
-        src/manager/Scene.cpp)
+        src/manager/Scene.cpp
+        src/MapGeneration.cpp)
 
 
 target_link_libraries(Project

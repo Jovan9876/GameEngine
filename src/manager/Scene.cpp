@@ -4,11 +4,20 @@
 
 #include "Scene.h"
 #include "AssetManager.h"
+#include "MapGeneration.h"
 
 Scene::Scene(const char *sceneName, const char *mapPath, const int windowWidth, const int windowHeight) : name(sceneName) {
-    // Load our map
     world.setWindowSize(windowWidth, windowHeight);
-    world.getMap().load(mapPath, TextureManager::load("../asset/tileset.png"));
+
+    MapGeneration generator;
+    generator.minGapY = 60.0f;
+    generator.maxGapY = 120.0f;
+    generator.minWidth = 2;
+    generator.maxWidth = 5;
+    world.getMap().tileset = TextureManager::load("../asset/tileset.png");
+    generator.generatePlatforms(world.getMap(), 20, 100, 50);
+
+    // Create collider entities from map colliders
     for (auto &collider: world.getMap().colliders) {
         auto &e = world.createEntity();
         e.addComponent<Transform>(Vector2D(collider.rect.x, collider.rect.y), 0.0f, 1.0f);
@@ -26,23 +35,23 @@ Scene::Scene(const char *sceneName, const char *mapPath, const int windowWidth, 
         e.addComponent<Sprite>(tex, colSrc, colDst);
     }
 
-    // Add coin items from itemSpawnPoints points
+    // Add coin items from itemSpawns points
     SDL_Texture *coinTex = TextureManager::load("../asset/coin.png");
     SDL_FRect coinSrc{0, 0, 32, 32};
 
-    for (const auto &spawn: world.getMap().itemSpawnPoints) {
-        auto &coin = world.createEntity();
-
-        auto &transform = coin.addComponent<Transform>(Vector2D(spawn.x, spawn.y), 0.0f, 1.0f);
-        SDL_FRect coinDest{spawn.x, spawn.y, 32, 32};
-        coin.addComponent<Sprite>(coinTex, coinSrc, coinDest);
-
-        auto &c = coin.addComponent<Collider>("item");
-        c.rect.x = spawn.x;
-        c.rect.y = spawn.y;
-        c.rect.w = coinDest.w;
-        c.rect.h = coinDest.h;
-    }
+    // for (const auto &spawn: world.getMap().itemSpawns) {
+    //     auto &coin = world.createEntity();
+    //
+    //     auto &transform = coin.addComponent<Transform>(Vector2D(spawn.x, spawn.y), 0.0f, 1.0f);
+    //     SDL_FRect coinDest{spawn.x, spawn.y, 32, 32};
+    //     coin.addComponent<Sprite>(coinTex, coinSrc, coinDest);
+    //
+    //     auto &c = coin.addComponent<Collider>("item");
+    //     c.rect.x = spawn.x;
+    //     c.rect.y = spawn.y;
+    //     c.rect.w = coinDest.w;
+    //     c.rect.h = coinDest.h;
+    // }
 
     auto &cam = world.createEntity();
     SDL_FRect camView{};
@@ -98,6 +107,4 @@ Scene::Scene(const char *sceneName, const char *mapPath, const int windowWidth, 
     // Add scene state
     auto &state(world.createEntity());
     state.addComponent<SceneState>();
-
-
 }
