@@ -5,8 +5,8 @@ set(CMAKE_CXX_STANDARD 20)
 
 # Set SDL3 Include and Lib Paths
 if (WIN32)
-    set(SDL3_PATH "C:/Dev/sdl3")
-    set(SDL3_IMAGE_PATH "C:/Dev/sdl3_image")
+    set(SDL3_PATH "C:/Dev/sdl3" CACHE PATH "Path to SDL3 root directory")
+    set(SDL3_IMAGE_PATH "C:/Dev/sdl3_image" CACHE PATH "Path to SDL3_image root directory")
     include_directories(
             ${SDL3_PATH}/include
             ${SDL3_IMAGE_PATH}/include
