@@ -58,7 +58,7 @@ Scene::Scene(const char *sceneName, const char *mapPath, const int windowWidth, 
     Animation anim = AssetManager::getAnimation("player");
     player.addComponent<Animation>(anim);
 
-    SDL_Texture *tex = TextureManager::load("../asset/animations/vampire_anim.png");
+    SDL_Texture *tex = TextureManager::load("../asset/animations/CoatDoodle.png");
     SDL_FRect playerSrc = anim.clips[anim.currentClip].frameIndices[0];
     SDL_FRect playerDst{playerTransform.position.x, playerTransform.position.y, 64, 64};
     player.addComponent<Sprite>(tex, playerSrc, playerDst);
