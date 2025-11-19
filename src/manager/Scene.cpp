@@ -21,7 +21,7 @@ Scene::Scene(const char *sceneName, const char *mapPath, const int windowWidth, 
     for (auto &collider: world.getMap().colliders) {
         auto &e = world.createEntity();
         e.addComponent<Transform>(Vector2D(collider.rect.x, collider.rect.y), 0.0f, 1.0f);
-        auto &c = e.addComponent<Collider>("no_wall");
+        auto &c = e.addComponent<Collider>("platform");
         c.rect.x = collider.rect.x;
         c.rect.y = collider.rect.y;
         c.rect.w = collider.rect.w;
@@ -33,6 +33,23 @@ Scene::Scene(const char *sceneName, const char *mapPath, const int windowWidth, 
         SDL_FRect colDst{c.rect.x, c.rect.y, c.rect.w, c.rect.h};
 
         e.addComponent<Sprite>(tex, colSrc, colDst);
+
+        auto &plat = e.addComponent<Platform>();
+
+        float random = static_cast<float>(rand()) / RAND_MAX;
+        if (random < 0.2f) {
+            plat.type = Platform::Type::Breakable;
+            e.addComponent<BreakablePlatform>();
+        } else if (random > 0.8f) {
+            plat.type = Platform::Type::Moving;
+            auto &mp = e.addComponent<MovingPlatform>();
+            mp.startPoint.x = collider.rect.x;
+            mp.startPoint.y = collider.rect.x * 2;
+            mp.speed = 0.5f;
+        } else {
+            plat.type = Platform::Type::Static;
+            e.addComponent<Platform>();
+        }
     }
 
     // Add coin items from itemSpawns points

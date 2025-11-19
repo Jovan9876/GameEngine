@@ -76,4 +76,30 @@ struct PlayerTag {};
 
 struct ProjectileTag {};
 
+struct Platform {
+    enum class Type {
+        Static,
+        Moving,
+        Breakable
+    };
+
+    Type type = Type::Static;
+};
+
+struct MovingPlatform {
+    Vector2D startPoint{};
+    Vector2D endPoint{};
+    float speed{};
+    bool onroute = true;
+};
+
+struct BreakablePlatform {
+    float breakDelay = 0.2f;
+    float destroyDelay = 0.4f;
+
+    bool triggered = false;
+    bool broken = false;
+    float timer = 0.0f;
+};
+
 #endif //PROJECT_COMPONENT_H

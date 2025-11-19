@@ -36,7 +36,9 @@ add_executable(Project src/main.cpp
         src/vendor/tinyxml2.cpp
         src/manager/AssetManager.cpp
         src/manager/Scene.cpp
-        src/MapGeneration.cpp)
+        src/MapGeneration.cpp
+        src/ecs/system/PlatformSystem.cpp
+)
 
 
 target_link_libraries(Project
