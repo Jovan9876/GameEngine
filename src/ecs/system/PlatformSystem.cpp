@@ -18,32 +18,44 @@ void PlatformSystem::update(std::vector<std::unique_ptr<Entity>>& entities, floa
 
         //moving platforms
         if (e->hasComponent<Transform>() &&
-            e->hasComponent<Platform>()  &&
-            e->hasComponent<MovingPlatform>()) {
+        e->hasComponent<Platform>()  &&
+        e->hasComponent<MovingPlatform>()) {
 
-            auto& t      = e->getComponent<Transform>();
-            auto& plat   = e->getComponent<Platform>();
-            auto& moving = e->getComponent<MovingPlatform>();
+                auto &t      = e->getComponent<Transform>();
+                auto &plat   = e->getComponent<Platform>();
+                auto &moving = e->getComponent<MovingPlatform>();
 
-            if (plat.type == Platform::Type::Moving) {
-                Vector2D target = moving.onroute ? moving.endPoint : moving.startPoint;
-                Vector2D diff   = target - t.position;
-                float    dist   = std::sqrt(diff.x * diff.x + diff.y * diff.y);
+                if (plat.type == Platform::Type::Moving) {
+                    Vector2D target = moving.moveToB ? moving.endPoint : moving.startPoint;
+                    Vector2D diff   = target - t.position;
+                    float    dist   = std::sqrt(diff.x * diff.x + diff.y * diff.y);
 
-                if (dist > EPS) {
-                    Vector2D dir  = diff / dist;
-                    float    step = moving.speed * dt;
+                    if (dist > 0.001f) {
+                        Vector2D dir  = diff / dist;
+                        float    step = moving.speed * dt;
 
-                    if (step >= dist) {
-                        t.position     = target;
-                        moving.onroute = !moving.onroute;
+                        if (step >= dist) {
+                            t.position   = target;
+                            moving.moveToB = !moving.moveToB; // flip direction
+                        } else {
+                            t.position += dir * step;
+                        }
                     } else {
-                        t.position += dir * step;
+                        moving.moveToB = !moving.moveToB;
                     }
-                } else {
-                    moving.onroute = !moving.onroute;
+
+                    // move sprite and collider with the transform vals
+                    if (e->hasComponent<Sprite>()) {
+                        auto &s = e->getComponent<Sprite>();
+                        s.dst.x = t.position.x;
+                        s.dst.y = t.position.y;
+                    }
+                    if (e->hasComponent<Collider>()) {
+                        auto &col = e->getComponent<Collider>();
+                        col.rect.x = t.position.x;
+                        col.rect.y = t.position.y;
+                    }
                 }
-            }
             }
 
         //breakable platforms

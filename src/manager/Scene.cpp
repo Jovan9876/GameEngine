@@ -19,38 +19,53 @@ Scene::Scene(const char *sceneName, const char *mapPath, const int windowWidth, 
 
     // Create collider entities from map colliders
     for (auto &collider: world.getMap().colliders) {
-        auto &e = world.createEntity();
-        e.addComponent<Transform>(Vector2D(collider.rect.x, collider.rect.y), 0.0f, 1.0f);
-        auto &c = e.addComponent<Collider>("platform");
-        c.rect.x = collider.rect.x;
-        c.rect.y = collider.rect.y;
-        c.rect.w = collider.rect.w;
-        c.rect.h = collider.rect.h;
+    auto &e = world.createEntity();
 
-        // Add a visual of the colliders
-        SDL_Texture *tex = TextureManager::load("../asset/tileset.png");
-        SDL_FRect colSrc{0, 32, 32, 32};
-        SDL_FRect colDst{c.rect.x, c.rect.y, c.rect.w, c.rect.h};
+    auto &t = e.addComponent<Transform>(
+        Vector2D(collider.rect.x, collider.rect.y), 0.0f, 1.0f
+    );
 
-        e.addComponent<Sprite>(tex, colSrc, colDst);
+    auto &c = e.addComponent<Collider>("platform");
+    c.rect.x = collider.rect.x;
+    c.rect.y = collider.rect.y;
+    c.rect.w = collider.rect.w;
+    c.rect.h = collider.rect.h;
 
-        auto &plat = e.addComponent<Platform>();
+    SDL_Texture *tex = TextureManager::load("../asset/tileset.png");
+    SDL_FRect colSrc{0, 32, 32, 32};
+    SDL_FRect colDst{c.rect.x, c.rect.y, c.rect.w, c.rect.h};
+    e.addComponent<Sprite>(tex, colSrc, colDst);
 
-        float random = static_cast<float>(rand()) / RAND_MAX;
-        if (random < 0.2f) {
-            plat.type = Platform::Type::Breakable;
-            e.addComponent<BreakablePlatform>();
-        } else if (random > 0.8f) {
-            plat.type = Platform::Type::Moving;
-            auto &mp = e.addComponent<MovingPlatform>();
-            mp.startPoint.x = collider.rect.x;
-            mp.startPoint.y = collider.rect.x * 2;
-            mp.speed = 0.5f;
-        } else {
-            plat.type = Platform::Type::Static;
-            e.addComponent<Platform>();
-        }
+    auto &plat = e.addComponent<Platform>();   // only once
+
+    float random = static_cast<float>(rand()) / RAND_MAX;
+
+    if (random < 0.2f) {
+        // 20% Breakable
+        plat.type = Platform::Type::Breakable;
+        e.addComponent<BreakablePlatform>();
     }
+    else if (random > 0.8f) {
+        // 20% Moving
+        plat.type = Platform::Type::Moving;
+
+        auto &mp = e.addComponent<MovingPlatform>();
+
+        // Use current tile center as middle point
+        Vector2D center = t.position;
+
+        // Move one tile left/right; adjust 32.f if your tiles are different
+        mp.startPoint = center + Vector2D(-32.0f, 0.0f);
+        mp.endPoint   = center + Vector2D( 32.0f, 0.0f);
+
+        mp.speed   = 80.0f;   // pixels per second – tweak this
+        mp.moveToB = true;    // start going start -> end
+    }
+    else {
+        // Everything else is static
+        plat.type = Platform::Type::Static; // or Normal if that's your enum
+    }
+}
 
     // Add coin items from itemSpawns points
     SDL_Texture *coinTex = TextureManager::load("../asset/coin.png");

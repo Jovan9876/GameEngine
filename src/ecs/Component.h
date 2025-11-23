@@ -90,7 +90,7 @@ struct MovingPlatform {
     Vector2D startPoint{};
     Vector2D endPoint{};
     float speed{};
-    bool onroute = true;
+    bool moveToB = true;
 };
 
 struct BreakablePlatform {
