@@ -19,6 +19,7 @@
 #include "DestructionSystem.h"
 #include "SpawnTimerSystem.h"
 #include "GravitySystem.h"
+#include "PlatformSystem.h"
 #include "ScreenWrapSystem.h"
 
 
@@ -37,6 +38,7 @@ class World {
     DestructionSystem destructionSystem;
     GravitySystem gravitySystem;
     ScreenWrapSystem screenWrapSystem;
+    PlatformSystem platformSystem;
     int windowWidth{0};
     int windowHeight{0};
 
@@ -53,6 +55,7 @@ public:
         cameraSystem.update(entities);
         spawnTimerSystem.update(entities, dt);
         destructionSystem.update(entities);
+        platformSystem.update(entities, dt);
         synchronizeEntities();
         cleanup();
     }
