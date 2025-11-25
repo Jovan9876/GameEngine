@@ -20,12 +20,6 @@ public:
                 auto& v = e->getComponent<Velocity>();
                 if (event.type == SDL_EVENT_KEY_DOWN) {
                     switch (event.key.key) {
-                        case SDLK_W:
-                            v.direction.y = -1;
-                            break;
-                        case SDLK_S:
-                            v.direction.y = 1;
-                            break;
                         case SDLK_A:
                             v.direction.x = -1;
                             break;
@@ -39,12 +33,6 @@ public:
 
                 if (event.type == SDL_EVENT_KEY_UP) {
                     switch (event.key.key) {
-                        case SDLK_W:
-                            v.direction.y = 0;
-                            break;
-                        case SDLK_S:
-                            v.direction.y = 0;
-                            break;
                         case SDLK_A:
                             v.direction.x = 0;
                             break;
