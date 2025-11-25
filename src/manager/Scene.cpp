@@ -15,7 +15,7 @@ Scene::Scene(const char *sceneName, const char *mapPath, const int windowWidth, 
     generator.minWidth = 2;
     generator.maxWidth = 5;
     world.getMap().tileset = TextureManager::load("../asset/mario.png");
-    generator.generatePlatforms(world.getMap(), 40, 100, 50);
+    generator.generatePlatforms(world.getMap(), 25, 1000, 200);
 
     // Create collider entities from map colliders
     for (auto &collider: world.getMap().colliders) {
@@ -92,11 +92,31 @@ Scene::Scene(const char *sceneName, const char *mapPath, const int windowWidth, 
     camView.h = windowHeight;
     cam.addComponent<Camera>(camView, world.getMap().width * 32, world.getMap().height * 32);
 
-    // Add entities
-    auto &player(world.createEntity());
-    auto &playerTransform = player.addComponent<Transform>(Vector2D(0, 0), 0.0f, 1.0f);
-    player.addComponent<Velocity>(Vector2D(0.0f, 0.0f), 240.0f);
+    // Makes it so the player spawns on top of a platform
+    float spawnY = world.getMap().height * 32 - 100;
+    Collider* spawnPlatform = nullptr;
 
+    for (auto& collider : world.getMap().colliders) {
+        if (collider.rect.y >= spawnY - 200 && collider.rect.y <= spawnY) {
+            spawnPlatform = &collider;
+            break;
+        }
+    }
+
+    auto &player(world.createEntity());
+    float playerStartX, playerStartY;
+
+    if (spawnPlatform) {
+        playerStartX = spawnPlatform->rect.x + (spawnPlatform->rect.w / 2) - 32;
+        playerStartY = spawnPlatform->rect.y - 64;
+    } else {
+        playerStartX = (world.getMap().width * 32) / 2;
+        playerStartY = 100;
+    }
+
+    auto &playerTransform = player.addComponent<Transform>(Vector2D(playerStartX, playerStartY), 0.0f, 1.0f);
+
+    player.addComponent<Velocity>(Vector2D(0.0f, 0.0f), 240.0f);
     Animation anim = AssetManager::getAnimation("player");
     player.addComponent<Animation>(anim);
 
@@ -110,7 +130,7 @@ Scene::Scene(const char *sceneName, const char *mapPath, const int windowWidth, 
     playerCollider.rect.h = playerDst.h;
 
     player.addComponent<PlayerTag>();
-    player.addComponent<Gravity>(200.0f,200.0f);
+    player.addComponent<Gravity>(750.0f,750.0f);
 
     player.addComponent<ScreenWrap>(true, 0.0f);
 

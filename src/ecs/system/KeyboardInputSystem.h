@@ -33,8 +33,8 @@ public:
 
                 if (event.type == SDL_EVENT_KEY_UP) {
                     switch (event.key.key) {
-                        case SDLK_A:
-                            v.direction.x = 0;
+                        case SDLK_S:
+                            v.direction.y = 0;
                             break;
                         case SDLK_D:
                             v.direction.x = 0;
