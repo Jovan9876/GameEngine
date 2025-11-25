@@ -14,8 +14,8 @@ Scene::Scene(const char *sceneName, const char *mapPath, const int windowWidth, 
     generator.maxGapY = 120.0f;
     generator.minWidth = 2;
     generator.maxWidth = 5;
-    world.getMap().tileset = TextureManager::load("../asset/tileset.png");
-    generator.generatePlatforms(world.getMap(), 20, 100, 50);
+    world.getMap().tileset = TextureManager::load("../asset/mario.png");
+    generator.generatePlatforms(world.getMap(), 40, 100, 50);
 
     // Create collider entities from map colliders
     for (auto &collider: world.getMap().colliders) {
