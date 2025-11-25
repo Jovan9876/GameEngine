@@ -36,8 +36,9 @@ Scene::Scene(const char *sceneName, const char *mapPath, const int windowWidth, 
     SDL_FRect colDst{c.rect.x, c.rect.y, c.rect.w, c.rect.h};
     e.addComponent<Sprite>(tex, colSrc, colDst);
 
-    auto &plat = e.addComponent<Platform>();   // only once
+    auto &plat = e.addComponent<Platform>();
 
+        // Generate random number of platform types
     float random = static_cast<float>(rand()) / RAND_MAX;
 
     if (random < 0.2f) {
@@ -54,16 +55,16 @@ Scene::Scene(const char *sceneName, const char *mapPath, const int windowWidth, 
         // Use current tile center as middle point
         Vector2D center = t.position;
 
-        // Move one tile left/right; adjust 32.f if your tiles are different
+        // move tile left/right
         mp.startPoint = center + Vector2D(-32.0f, 0.0f);
         mp.endPoint   = center + Vector2D( 32.0f, 0.0f);
 
-        mp.speed   = 80.0f;   // pixels per second – tweak this
-        mp.moveToB = true;    // start going start -> end
+        mp.speed   = 100.0f;
+        mp.moveToB = true;
     }
     else {
-        // Everything else is static
-        plat.type = Platform::Type::Static; // or Normal if that's your enum
+        // Everything else is static/normal type
+        plat.type = Platform::Type::Static;
     }
 }
 
@@ -91,7 +92,7 @@ Scene::Scene(const char *sceneName, const char *mapPath, const int windowWidth, 
     camView.h = windowHeight;
     cam.addComponent<Camera>(camView, world.getMap().width * 32, world.getMap().height * 32);
 
-    // Add entites
+    // Add entities
     auto &player(world.createEntity());
     auto &playerTransform = player.addComponent<Transform>(Vector2D(0, 0), 0.0f, 1.0f);
     player.addComponent<Velocity>(Vector2D(0.0f, 0.0f), 240.0f);
