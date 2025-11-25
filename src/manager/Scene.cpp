@@ -130,7 +130,7 @@ Scene::Scene(const char *sceneName, const char *mapPath, const int windowWidth, 
     playerCollider.rect.h = playerDst.h;
 
     player.addComponent<PlayerTag>();
-    player.addComponent<Gravity>(200.0f,200.0f);
+    player.addComponent<Gravity>(750.0f,750.0f);
 
     player.addComponent<ScreenWrap>(true, 0.0f);
 
