@@ -11,6 +11,7 @@
 #include "Entity.h"
 
 class HUDSystem {
+    bool firstUpdate = true;
 public:
     void update(const std::vector<std::unique_ptr<Entity>>& entities) {
         Entity* playerEntity = nullptr;
@@ -34,12 +35,27 @@ public:
                 //update player position
                 if (label.type == LabelType::Score) {
                     std::stringstream ss;
-                    //Put score calculation here
-                    if (playerTransform.position.y > scoreTracker.maxHeight) {
-                        //update score
+
+                    if (firstUpdate) {
                         scoreTracker.maxHeight = playerTransform.position.y;
-                        scoreTracker.score = static_cast<int>(scoreTracker.maxHeight / 10);
+                        firstUpdate = false;
+                    }
+
+                    //Put score calculation here
+                    if (playerTransform.position.y < scoreTracker.maxHeight) {
+                        float heightDifference = scoreTracker.maxHeight - playerTransform.position.y;
+                        scoreTracker.maxHeight = playerTransform.position.y;
+                        scoreTracker.score += static_cast<int>(heightDifference / 5);
+                        //update score
+                        // scoreTracker.maxHeight = playerTransform.position.y;
+                        // scoreTracker.score = static_cast<int>(scoreTracker.maxHeight / 10);
                     };
+
+                    // if (playerTransform.position.y > scoreTracker.maxHeight) {
+                    //     //update score
+                    //     scoreTracker.maxHeight = playerTransform.position.y;
+                    //     scoreTracker.score = static_cast<int>(scoreTracker.maxHeight / 10);
+                    // };
                     // ss << "Player position aka Score" << playerTransform.position.y;
                     ss << "Player position aka Score: " << scoreTracker.score;
                     label.text = ss.str();

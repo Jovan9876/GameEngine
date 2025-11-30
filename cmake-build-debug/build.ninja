@@ -161,6 +161,22 @@ build CMakeFiles/Project.dir/src/manager/AudioManager.cpp.obj: CXX_COMPILER__Pro
   OBJECT_DIR = CMakeFiles\Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Project.dir\src\manager
 
+build CMakeFiles/Project.dir/src/MapGeneration.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/BCIT/COMP$ 8522/GameEngine/src/MapGeneration.cpp || cmake_object_order_depends_target_Project
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\Project.dir\src\MapGeneration.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I"C:/BCIT/COMP 8522/sdl3_image/include" -I"C:/BCIT/COMP 8522/sdl3/include" -I"C:/BCIT/COMP 8522/sdl3_ttf/include" -I"C:/BCIT/COMP 8522/sdl3_mixer 3.1.0/include" -I"C:/BCIT/COMP 8522/GameEngine/src" -I"C:/BCIT/COMP 8522/GameEngine/src/utils" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs/system" -I"C:/BCIT/COMP 8522/GameEngine/src/vendor"
+  OBJECT_DIR = CMakeFiles\Project.dir
+  OBJECT_FILE_DIR = CMakeFiles\Project.dir\src
+
+build CMakeFiles/Project.dir/src/ecs/system/PlatformSystem.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/BCIT/COMP$ 8522/GameEngine/src/ecs/system/PlatformSystem.cpp || cmake_object_order_depends_target_Project
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\Project.dir\src\ecs\system\PlatformSystem.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I"C:/BCIT/COMP 8522/sdl3_image/include" -I"C:/BCIT/COMP 8522/sdl3/include" -I"C:/BCIT/COMP 8522/sdl3_ttf/include" -I"C:/BCIT/COMP 8522/sdl3_mixer 3.1.0/include" -I"C:/BCIT/COMP 8522/GameEngine/src" -I"C:/BCIT/COMP 8522/GameEngine/src/utils" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs/system" -I"C:/BCIT/COMP 8522/GameEngine/src/vendor"
+  OBJECT_DIR = CMakeFiles\Project.dir
+  OBJECT_FILE_DIR = CMakeFiles\Project.dir\src\ecs\system
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Project
@@ -169,7 +185,7 @@ build CMakeFiles/Project.dir/src/manager/AudioManager.cpp.obj: CXX_COMPILER__Pro
 #############################################
 # Link the executable Project.exe
 
-build Project.exe: CXX_EXECUTABLE_LINKER__Project_Debug CMakeFiles/Project.dir/src/main.cpp.obj CMakeFiles/Project.dir/src/Game.cpp.obj CMakeFiles/Project.dir/src/TextureManager.cpp.obj CMakeFiles/Project.dir/src/Map.cpp.obj CMakeFiles/Project.dir/src/gameObject.cpp.obj CMakeFiles/Project.dir/src/utils/Vector2D.cpp.obj CMakeFiles/Project.dir/src/utils/Collision.cpp.obj CMakeFiles/Project.dir/src/ecs/system/CollisionSystem.cpp.obj CMakeFiles/Project.dir/src/ecs/World.cpp.obj CMakeFiles/Project.dir/src/utils/CollisionObservers.cpp.obj CMakeFiles/Project.dir/src/vendor/tinyxml2.cpp.obj CMakeFiles/Project.dir/src/manager/AssetManager.cpp.obj CMakeFiles/Project.dir/src/manager/Scene.cpp.obj CMakeFiles/Project.dir/src/manager/AudioManager.cpp.obj
+build Project.exe: CXX_EXECUTABLE_LINKER__Project_Debug CMakeFiles/Project.dir/src/main.cpp.obj CMakeFiles/Project.dir/src/Game.cpp.obj CMakeFiles/Project.dir/src/TextureManager.cpp.obj CMakeFiles/Project.dir/src/Map.cpp.obj CMakeFiles/Project.dir/src/gameObject.cpp.obj CMakeFiles/Project.dir/src/utils/Vector2D.cpp.obj CMakeFiles/Project.dir/src/utils/Collision.cpp.obj CMakeFiles/Project.dir/src/ecs/system/CollisionSystem.cpp.obj CMakeFiles/Project.dir/src/ecs/World.cpp.obj CMakeFiles/Project.dir/src/utils/CollisionObservers.cpp.obj CMakeFiles/Project.dir/src/vendor/tinyxml2.cpp.obj CMakeFiles/Project.dir/src/manager/AssetManager.cpp.obj CMakeFiles/Project.dir/src/manager/Scene.cpp.obj CMakeFiles/Project.dir/src/manager/AudioManager.cpp.obj CMakeFiles/Project.dir/src/MapGeneration.cpp.obj CMakeFiles/Project.dir/src/ecs/system/PlatformSystem.cpp.obj
   CONFIG = Debug
   FLAGS = -g
   LINK_LIBRARIES = -lSDL3  -lSDL3_image  -lSDL3_ttf  -lSDL3_mixer  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

@@ -173,7 +173,7 @@ Entity &Scene::createScoreLabel() {
     Label label = {
         "Test String",
         AssetManager::getFont("arial"),
-        {255, 255, 255, 255},
+        {5, 45, 10, 255},
         LabelType::Score,
         "playerScore"
     };
