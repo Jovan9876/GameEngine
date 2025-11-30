@@ -12,8 +12,15 @@ class Scene {
 public:
     Scene(const char *sceneName, const char *mapPath, int windowWidth, int windowHeight);
 
+    bool isPaused = false;
+    Entity* pauseOverlay;
+
     void update(const float dt, const SDL_Event &e) {
-        world.update(dt, e);
+        //Testing pause function
+        // if (isPaused) {
+        //     togglePause(isPaused);
+        // }
+        world.update(dt, e, isPaused);
     }
 
     void render() {
@@ -23,11 +30,22 @@ public:
     World world;
 
     const std::string &getName() const { return name; }
+    void togglePause();
 
 private:
     std::string name;
 
+    Entity& createScoreLabel();
+
     void createProjectile(Vector2D pos, Vector2D dir, int speed);
+
+    // void initMainMenu(int windowWidth, int windowHeight);
+    // int initGameplay(const char* mappath, int windowWidth, int windowHeight);
+
+    Entity& createSettingsOverlay(int windowWidth, int windowHeight);
+    // Entity& createCogButton(int windowWidth, int windowHeight, Entity& overlay);
+    void createSettingsUIComponents(Entity& overlay);
+    void toggleSettingsOverlayVisibility(Entity& overlay);
 };
 
 #endif //PROJECT_SCENE_H

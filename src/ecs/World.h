@@ -19,9 +19,12 @@
 #include "DestructionSystem.h"
 #include "SpawnTimerSystem.h"
 #include "GravitySystem.h"
+#include "HUDSystem.h"
+#include "PreRenderSystem.h"
 #include "PlatformSystem.h"
 #include "ScreenWrapSystem.h"
-
+#include "UIRenderSystem.h"
+#include "Event/AudioEventQueue.h"
 
 class World {
     Map map;
@@ -42,20 +45,37 @@ class World {
     int windowWidth{0};
     int windowHeight{0};
 
+    //HUD
+    UIRenderSystem uiRenderSystem;
+    HUDSystem hudSystem;
+    PreRenderSystem preRenderSystem;
+
+    //Audio
+    AudioEventQueue audioEventQueue;
+
 public:
     World();
 
-    void update(float dt, const SDL_Event &event) {
-        keyboardInputSystem.update(entities, event);
-        movementSystem.update(entities, dt);
-        gravitySystem.update(entities, dt);
-        screenWrapSystem.update(entities);
-        collisionSystem.update(*this);
-        animationSystem.update(entities, dt);
-        cameraSystem.update(entities);
-        spawnTimerSystem.update(entities, dt);
-        destructionSystem.update(entities);
-        platformSystem.update(entities, dt);
+    void update(float dt, const SDL_Event &event, bool &isPaused) {
+        keyboardInputSystem.update(entities, event, isPaused);
+
+        //Testing pause
+        if (!isPaused) {
+            movementSystem.update(entities, dt);
+            gravitySystem.update(entities, dt);
+            screenWrapSystem.update(entities);
+            collisionSystem.update(*this);
+            animationSystem.update(entities, dt);
+            cameraSystem.update(entities);
+            spawnTimerSystem.update(entities, dt);
+            destructionSystem.update(entities);
+            hudSystem.update(entities);
+        }
+
+        audioEventQueue.process();
+        //put this last
+        preRenderSystem.update(entities);
+
         synchronizeEntities();
         cleanup();
     }
@@ -74,6 +94,7 @@ public:
             }
         }
         renderSystem.render(entities);
+        uiRenderSystem.render(entities);
     }
 
     Entity &createEntity() {
@@ -113,6 +134,9 @@ public:
             defferedEntities.clear();
         };
     }
+
+    //For Audio
+    AudioEventQueue& getAudioEventQueue(){return audioEventQueue;};
 
     EventManager &getEventManager() { return eventManager; }
     Map &getMap() { return map; }
