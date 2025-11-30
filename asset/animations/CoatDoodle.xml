@@ -1,13 +1,13 @@
 <animations>
     <walk_left>
-        <frame x="0" y="0" w="133" h="133"/>
-        <frame x="133" y="0" w="133" h="133"/>
-        <frame x="266" y="0" w="134" h="133"/>
+        <frame x="0" y="0" w="115" h="133"/>
+        <frame x="133" y="0" w="115" h="133"/>
+        <frame x="266" y="0" w="115" h="133"/>
     </walk_left>
     <walk_right>
-        <frame x="0" y="133" w="133" h="133"/>
-        <frame x="133" y="133" w="133" h="133"/>
-        <frame x="266" y="133" w="134" h="133"/>
+        <frame x="0" y="133" w="115" h="133"/>
+        <frame x="133" y="133" w="115" h="133"/>
+        <frame x="266" y="133" w="115" h="133"/>
     </walk_right>
     <idle>
         <frame x="0" y="266" w="133" h="134"/>

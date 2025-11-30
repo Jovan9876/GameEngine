@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = C$:/BCIT/COMP$ 8522/GameEngine/cmake-build-debug/
+cmake_ninja_workdir = C$:/Users/Richa/CLionProjects/GameEngine/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target Project
 
@@ -49,131 +49,131 @@ cmake_ninja_workdir = C$:/BCIT/COMP$ 8522/GameEngine/cmake-build-debug/
 
 build cmake_object_order_depends_target_Project: phony || .
 
-build CMakeFiles/Project.dir/src/main.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/BCIT/COMP$ 8522/GameEngine/src/main.cpp || cmake_object_order_depends_target_Project
+build CMakeFiles/Project.dir/src/main.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/Users/Richa/CLionProjects/GameEngine/src/main.cpp || cmake_object_order_depends_target_Project
   CONFIG = Debug
   DEP_FILE = CMakeFiles\Project.dir\src\main.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -I"C:/BCIT/COMP 8522/sdl3_image/include" -I"C:/BCIT/COMP 8522/sdl3/include" -I"C:/BCIT/COMP 8522/sdl3_ttf/include" -I"C:/BCIT/COMP 8522/sdl3_mixer 3.1.0/include" -I"C:/BCIT/COMP 8522/GameEngine/src" -I"C:/BCIT/COMP 8522/GameEngine/src/utils" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs/system" -I"C:/BCIT/COMP 8522/GameEngine/src/vendor"
+  INCLUDES = -IC:/Dev/sdl3/include -IC:/Dev/sdl3_image/include -IC:/Dev/sdl3_ttf/include -I"C:/Dev/sdl3_mixer 3.1.0/include" -IC:/Users/Richa/CLionProjects/GameEngine/src -IC:/Users/Richa/CLionProjects/GameEngine/src/utils -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs/system -IC:/Users/Richa/CLionProjects/GameEngine/src/vendor
   OBJECT_DIR = CMakeFiles\Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Project.dir\src
 
-build CMakeFiles/Project.dir/src/Game.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/BCIT/COMP$ 8522/GameEngine/src/Game.cpp || cmake_object_order_depends_target_Project
+build CMakeFiles/Project.dir/src/Game.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/Users/Richa/CLionProjects/GameEngine/src/Game.cpp || cmake_object_order_depends_target_Project
   CONFIG = Debug
   DEP_FILE = CMakeFiles\Project.dir\src\Game.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -I"C:/BCIT/COMP 8522/sdl3_image/include" -I"C:/BCIT/COMP 8522/sdl3/include" -I"C:/BCIT/COMP 8522/sdl3_ttf/include" -I"C:/BCIT/COMP 8522/sdl3_mixer 3.1.0/include" -I"C:/BCIT/COMP 8522/GameEngine/src" -I"C:/BCIT/COMP 8522/GameEngine/src/utils" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs/system" -I"C:/BCIT/COMP 8522/GameEngine/src/vendor"
+  INCLUDES = -IC:/Dev/sdl3/include -IC:/Dev/sdl3_image/include -IC:/Dev/sdl3_ttf/include -I"C:/Dev/sdl3_mixer 3.1.0/include" -IC:/Users/Richa/CLionProjects/GameEngine/src -IC:/Users/Richa/CLionProjects/GameEngine/src/utils -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs/system -IC:/Users/Richa/CLionProjects/GameEngine/src/vendor
   OBJECT_DIR = CMakeFiles\Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Project.dir\src
 
-build CMakeFiles/Project.dir/src/TextureManager.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/BCIT/COMP$ 8522/GameEngine/src/TextureManager.cpp || cmake_object_order_depends_target_Project
+build CMakeFiles/Project.dir/src/TextureManager.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/Users/Richa/CLionProjects/GameEngine/src/TextureManager.cpp || cmake_object_order_depends_target_Project
   CONFIG = Debug
   DEP_FILE = CMakeFiles\Project.dir\src\TextureManager.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -I"C:/BCIT/COMP 8522/sdl3_image/include" -I"C:/BCIT/COMP 8522/sdl3/include" -I"C:/BCIT/COMP 8522/sdl3_ttf/include" -I"C:/BCIT/COMP 8522/sdl3_mixer 3.1.0/include" -I"C:/BCIT/COMP 8522/GameEngine/src" -I"C:/BCIT/COMP 8522/GameEngine/src/utils" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs/system" -I"C:/BCIT/COMP 8522/GameEngine/src/vendor"
+  INCLUDES = -IC:/Dev/sdl3/include -IC:/Dev/sdl3_image/include -IC:/Dev/sdl3_ttf/include -I"C:/Dev/sdl3_mixer 3.1.0/include" -IC:/Users/Richa/CLionProjects/GameEngine/src -IC:/Users/Richa/CLionProjects/GameEngine/src/utils -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs/system -IC:/Users/Richa/CLionProjects/GameEngine/src/vendor
   OBJECT_DIR = CMakeFiles\Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Project.dir\src
 
-build CMakeFiles/Project.dir/src/Map.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/BCIT/COMP$ 8522/GameEngine/src/Map.cpp || cmake_object_order_depends_target_Project
+build CMakeFiles/Project.dir/src/Map.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/Users/Richa/CLionProjects/GameEngine/src/Map.cpp || cmake_object_order_depends_target_Project
   CONFIG = Debug
   DEP_FILE = CMakeFiles\Project.dir\src\Map.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -I"C:/BCIT/COMP 8522/sdl3_image/include" -I"C:/BCIT/COMP 8522/sdl3/include" -I"C:/BCIT/COMP 8522/sdl3_ttf/include" -I"C:/BCIT/COMP 8522/sdl3_mixer 3.1.0/include" -I"C:/BCIT/COMP 8522/GameEngine/src" -I"C:/BCIT/COMP 8522/GameEngine/src/utils" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs/system" -I"C:/BCIT/COMP 8522/GameEngine/src/vendor"
+  INCLUDES = -IC:/Dev/sdl3/include -IC:/Dev/sdl3_image/include -IC:/Dev/sdl3_ttf/include -I"C:/Dev/sdl3_mixer 3.1.0/include" -IC:/Users/Richa/CLionProjects/GameEngine/src -IC:/Users/Richa/CLionProjects/GameEngine/src/utils -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs/system -IC:/Users/Richa/CLionProjects/GameEngine/src/vendor
   OBJECT_DIR = CMakeFiles\Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Project.dir\src
 
-build CMakeFiles/Project.dir/src/gameObject.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/BCIT/COMP$ 8522/GameEngine/src/gameObject.cpp || cmake_object_order_depends_target_Project
+build CMakeFiles/Project.dir/src/gameObject.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/Users/Richa/CLionProjects/GameEngine/src/gameObject.cpp || cmake_object_order_depends_target_Project
   CONFIG = Debug
   DEP_FILE = CMakeFiles\Project.dir\src\gameObject.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -I"C:/BCIT/COMP 8522/sdl3_image/include" -I"C:/BCIT/COMP 8522/sdl3/include" -I"C:/BCIT/COMP 8522/sdl3_ttf/include" -I"C:/BCIT/COMP 8522/sdl3_mixer 3.1.0/include" -I"C:/BCIT/COMP 8522/GameEngine/src" -I"C:/BCIT/COMP 8522/GameEngine/src/utils" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs/system" -I"C:/BCIT/COMP 8522/GameEngine/src/vendor"
+  INCLUDES = -IC:/Dev/sdl3/include -IC:/Dev/sdl3_image/include -IC:/Dev/sdl3_ttf/include -I"C:/Dev/sdl3_mixer 3.1.0/include" -IC:/Users/Richa/CLionProjects/GameEngine/src -IC:/Users/Richa/CLionProjects/GameEngine/src/utils -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs/system -IC:/Users/Richa/CLionProjects/GameEngine/src/vendor
   OBJECT_DIR = CMakeFiles\Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Project.dir\src
 
-build CMakeFiles/Project.dir/src/utils/Vector2D.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/BCIT/COMP$ 8522/GameEngine/src/utils/Vector2D.cpp || cmake_object_order_depends_target_Project
+build CMakeFiles/Project.dir/src/utils/Vector2D.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/Users/Richa/CLionProjects/GameEngine/src/utils/Vector2D.cpp || cmake_object_order_depends_target_Project
   CONFIG = Debug
   DEP_FILE = CMakeFiles\Project.dir\src\utils\Vector2D.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -I"C:/BCIT/COMP 8522/sdl3_image/include" -I"C:/BCIT/COMP 8522/sdl3/include" -I"C:/BCIT/COMP 8522/sdl3_ttf/include" -I"C:/BCIT/COMP 8522/sdl3_mixer 3.1.0/include" -I"C:/BCIT/COMP 8522/GameEngine/src" -I"C:/BCIT/COMP 8522/GameEngine/src/utils" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs/system" -I"C:/BCIT/COMP 8522/GameEngine/src/vendor"
+  INCLUDES = -IC:/Dev/sdl3/include -IC:/Dev/sdl3_image/include -IC:/Dev/sdl3_ttf/include -I"C:/Dev/sdl3_mixer 3.1.0/include" -IC:/Users/Richa/CLionProjects/GameEngine/src -IC:/Users/Richa/CLionProjects/GameEngine/src/utils -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs/system -IC:/Users/Richa/CLionProjects/GameEngine/src/vendor
   OBJECT_DIR = CMakeFiles\Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Project.dir\src\utils
 
-build CMakeFiles/Project.dir/src/utils/Collision.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/BCIT/COMP$ 8522/GameEngine/src/utils/Collision.cpp || cmake_object_order_depends_target_Project
+build CMakeFiles/Project.dir/src/utils/Collision.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/Users/Richa/CLionProjects/GameEngine/src/utils/Collision.cpp || cmake_object_order_depends_target_Project
   CONFIG = Debug
   DEP_FILE = CMakeFiles\Project.dir\src\utils\Collision.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -I"C:/BCIT/COMP 8522/sdl3_image/include" -I"C:/BCIT/COMP 8522/sdl3/include" -I"C:/BCIT/COMP 8522/sdl3_ttf/include" -I"C:/BCIT/COMP 8522/sdl3_mixer 3.1.0/include" -I"C:/BCIT/COMP 8522/GameEngine/src" -I"C:/BCIT/COMP 8522/GameEngine/src/utils" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs/system" -I"C:/BCIT/COMP 8522/GameEngine/src/vendor"
+  INCLUDES = -IC:/Dev/sdl3/include -IC:/Dev/sdl3_image/include -IC:/Dev/sdl3_ttf/include -I"C:/Dev/sdl3_mixer 3.1.0/include" -IC:/Users/Richa/CLionProjects/GameEngine/src -IC:/Users/Richa/CLionProjects/GameEngine/src/utils -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs/system -IC:/Users/Richa/CLionProjects/GameEngine/src/vendor
   OBJECT_DIR = CMakeFiles\Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Project.dir\src\utils
 
-build CMakeFiles/Project.dir/src/ecs/system/CollisionSystem.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/BCIT/COMP$ 8522/GameEngine/src/ecs/system/CollisionSystem.cpp || cmake_object_order_depends_target_Project
+build CMakeFiles/Project.dir/src/ecs/system/CollisionSystem.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/Users/Richa/CLionProjects/GameEngine/src/ecs/system/CollisionSystem.cpp || cmake_object_order_depends_target_Project
   CONFIG = Debug
   DEP_FILE = CMakeFiles\Project.dir\src\ecs\system\CollisionSystem.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -I"C:/BCIT/COMP 8522/sdl3_image/include" -I"C:/BCIT/COMP 8522/sdl3/include" -I"C:/BCIT/COMP 8522/sdl3_ttf/include" -I"C:/BCIT/COMP 8522/sdl3_mixer 3.1.0/include" -I"C:/BCIT/COMP 8522/GameEngine/src" -I"C:/BCIT/COMP 8522/GameEngine/src/utils" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs/system" -I"C:/BCIT/COMP 8522/GameEngine/src/vendor"
+  INCLUDES = -IC:/Dev/sdl3/include -IC:/Dev/sdl3_image/include -IC:/Dev/sdl3_ttf/include -I"C:/Dev/sdl3_mixer 3.1.0/include" -IC:/Users/Richa/CLionProjects/GameEngine/src -IC:/Users/Richa/CLionProjects/GameEngine/src/utils -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs/system -IC:/Users/Richa/CLionProjects/GameEngine/src/vendor
   OBJECT_DIR = CMakeFiles\Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Project.dir\src\ecs\system
 
-build CMakeFiles/Project.dir/src/ecs/World.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/BCIT/COMP$ 8522/GameEngine/src/ecs/World.cpp || cmake_object_order_depends_target_Project
+build CMakeFiles/Project.dir/src/ecs/World.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/Users/Richa/CLionProjects/GameEngine/src/ecs/World.cpp || cmake_object_order_depends_target_Project
   CONFIG = Debug
   DEP_FILE = CMakeFiles\Project.dir\src\ecs\World.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -I"C:/BCIT/COMP 8522/sdl3_image/include" -I"C:/BCIT/COMP 8522/sdl3/include" -I"C:/BCIT/COMP 8522/sdl3_ttf/include" -I"C:/BCIT/COMP 8522/sdl3_mixer 3.1.0/include" -I"C:/BCIT/COMP 8522/GameEngine/src" -I"C:/BCIT/COMP 8522/GameEngine/src/utils" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs/system" -I"C:/BCIT/COMP 8522/GameEngine/src/vendor"
+  INCLUDES = -IC:/Dev/sdl3/include -IC:/Dev/sdl3_image/include -IC:/Dev/sdl3_ttf/include -I"C:/Dev/sdl3_mixer 3.1.0/include" -IC:/Users/Richa/CLionProjects/GameEngine/src -IC:/Users/Richa/CLionProjects/GameEngine/src/utils -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs/system -IC:/Users/Richa/CLionProjects/GameEngine/src/vendor
   OBJECT_DIR = CMakeFiles\Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Project.dir\src\ecs
 
-build CMakeFiles/Project.dir/src/utils/CollisionObservers.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/BCIT/COMP$ 8522/GameEngine/src/utils/CollisionObservers.cpp || cmake_object_order_depends_target_Project
+build CMakeFiles/Project.dir/src/utils/CollisionObservers.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/Users/Richa/CLionProjects/GameEngine/src/utils/CollisionObservers.cpp || cmake_object_order_depends_target_Project
   CONFIG = Debug
   DEP_FILE = CMakeFiles\Project.dir\src\utils\CollisionObservers.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -I"C:/BCIT/COMP 8522/sdl3_image/include" -I"C:/BCIT/COMP 8522/sdl3/include" -I"C:/BCIT/COMP 8522/sdl3_ttf/include" -I"C:/BCIT/COMP 8522/sdl3_mixer 3.1.0/include" -I"C:/BCIT/COMP 8522/GameEngine/src" -I"C:/BCIT/COMP 8522/GameEngine/src/utils" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs/system" -I"C:/BCIT/COMP 8522/GameEngine/src/vendor"
+  INCLUDES = -IC:/Dev/sdl3/include -IC:/Dev/sdl3_image/include -IC:/Dev/sdl3_ttf/include -I"C:/Dev/sdl3_mixer 3.1.0/include" -IC:/Users/Richa/CLionProjects/GameEngine/src -IC:/Users/Richa/CLionProjects/GameEngine/src/utils -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs/system -IC:/Users/Richa/CLionProjects/GameEngine/src/vendor
   OBJECT_DIR = CMakeFiles\Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Project.dir\src\utils
 
-build CMakeFiles/Project.dir/src/vendor/tinyxml2.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/BCIT/COMP$ 8522/GameEngine/src/vendor/tinyxml2.cpp || cmake_object_order_depends_target_Project
+build CMakeFiles/Project.dir/src/vendor/tinyxml2.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/Users/Richa/CLionProjects/GameEngine/src/vendor/tinyxml2.cpp || cmake_object_order_depends_target_Project
   CONFIG = Debug
   DEP_FILE = CMakeFiles\Project.dir\src\vendor\tinyxml2.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -I"C:/BCIT/COMP 8522/sdl3_image/include" -I"C:/BCIT/COMP 8522/sdl3/include" -I"C:/BCIT/COMP 8522/sdl3_ttf/include" -I"C:/BCIT/COMP 8522/sdl3_mixer 3.1.0/include" -I"C:/BCIT/COMP 8522/GameEngine/src" -I"C:/BCIT/COMP 8522/GameEngine/src/utils" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs/system" -I"C:/BCIT/COMP 8522/GameEngine/src/vendor"
+  INCLUDES = -IC:/Dev/sdl3/include -IC:/Dev/sdl3_image/include -IC:/Dev/sdl3_ttf/include -I"C:/Dev/sdl3_mixer 3.1.0/include" -IC:/Users/Richa/CLionProjects/GameEngine/src -IC:/Users/Richa/CLionProjects/GameEngine/src/utils -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs/system -IC:/Users/Richa/CLionProjects/GameEngine/src/vendor
   OBJECT_DIR = CMakeFiles\Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Project.dir\src\vendor
 
-build CMakeFiles/Project.dir/src/manager/AssetManager.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/BCIT/COMP$ 8522/GameEngine/src/manager/AssetManager.cpp || cmake_object_order_depends_target_Project
+build CMakeFiles/Project.dir/src/manager/AssetManager.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/Users/Richa/CLionProjects/GameEngine/src/manager/AssetManager.cpp || cmake_object_order_depends_target_Project
   CONFIG = Debug
   DEP_FILE = CMakeFiles\Project.dir\src\manager\AssetManager.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -I"C:/BCIT/COMP 8522/sdl3_image/include" -I"C:/BCIT/COMP 8522/sdl3/include" -I"C:/BCIT/COMP 8522/sdl3_ttf/include" -I"C:/BCIT/COMP 8522/sdl3_mixer 3.1.0/include" -I"C:/BCIT/COMP 8522/GameEngine/src" -I"C:/BCIT/COMP 8522/GameEngine/src/utils" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs/system" -I"C:/BCIT/COMP 8522/GameEngine/src/vendor"
+  INCLUDES = -IC:/Dev/sdl3/include -IC:/Dev/sdl3_image/include -IC:/Dev/sdl3_ttf/include -I"C:/Dev/sdl3_mixer 3.1.0/include" -IC:/Users/Richa/CLionProjects/GameEngine/src -IC:/Users/Richa/CLionProjects/GameEngine/src/utils -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs/system -IC:/Users/Richa/CLionProjects/GameEngine/src/vendor
   OBJECT_DIR = CMakeFiles\Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Project.dir\src\manager
 
-build CMakeFiles/Project.dir/src/manager/Scene.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/BCIT/COMP$ 8522/GameEngine/src/manager/Scene.cpp || cmake_object_order_depends_target_Project
+build CMakeFiles/Project.dir/src/manager/Scene.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/Users/Richa/CLionProjects/GameEngine/src/manager/Scene.cpp || cmake_object_order_depends_target_Project
   CONFIG = Debug
   DEP_FILE = CMakeFiles\Project.dir\src\manager\Scene.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -I"C:/BCIT/COMP 8522/sdl3_image/include" -I"C:/BCIT/COMP 8522/sdl3/include" -I"C:/BCIT/COMP 8522/sdl3_ttf/include" -I"C:/BCIT/COMP 8522/sdl3_mixer 3.1.0/include" -I"C:/BCIT/COMP 8522/GameEngine/src" -I"C:/BCIT/COMP 8522/GameEngine/src/utils" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs/system" -I"C:/BCIT/COMP 8522/GameEngine/src/vendor"
+  INCLUDES = -IC:/Dev/sdl3/include -IC:/Dev/sdl3_image/include -IC:/Dev/sdl3_ttf/include -I"C:/Dev/sdl3_mixer 3.1.0/include" -IC:/Users/Richa/CLionProjects/GameEngine/src -IC:/Users/Richa/CLionProjects/GameEngine/src/utils -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs/system -IC:/Users/Richa/CLionProjects/GameEngine/src/vendor
   OBJECT_DIR = CMakeFiles\Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Project.dir\src\manager
 
-build CMakeFiles/Project.dir/src/manager/AudioManager.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/BCIT/COMP$ 8522/GameEngine/src/manager/AudioManager.cpp || cmake_object_order_depends_target_Project
+build CMakeFiles/Project.dir/src/manager/AudioManager.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/Users/Richa/CLionProjects/GameEngine/src/manager/AudioManager.cpp || cmake_object_order_depends_target_Project
   CONFIG = Debug
   DEP_FILE = CMakeFiles\Project.dir\src\manager\AudioManager.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -I"C:/BCIT/COMP 8522/sdl3_image/include" -I"C:/BCIT/COMP 8522/sdl3/include" -I"C:/BCIT/COMP 8522/sdl3_ttf/include" -I"C:/BCIT/COMP 8522/sdl3_mixer 3.1.0/include" -I"C:/BCIT/COMP 8522/GameEngine/src" -I"C:/BCIT/COMP 8522/GameEngine/src/utils" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs/system" -I"C:/BCIT/COMP 8522/GameEngine/src/vendor"
+  INCLUDES = -IC:/Dev/sdl3/include -IC:/Dev/sdl3_image/include -IC:/Dev/sdl3_ttf/include -I"C:/Dev/sdl3_mixer 3.1.0/include" -IC:/Users/Richa/CLionProjects/GameEngine/src -IC:/Users/Richa/CLionProjects/GameEngine/src/utils -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs/system -IC:/Users/Richa/CLionProjects/GameEngine/src/vendor
   OBJECT_DIR = CMakeFiles\Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Project.dir\src\manager
 
-build CMakeFiles/Project.dir/src/MapGeneration.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/BCIT/COMP$ 8522/GameEngine/src/MapGeneration.cpp || cmake_object_order_depends_target_Project
+build CMakeFiles/Project.dir/src/MapGeneration.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/Users/Richa/CLionProjects/GameEngine/src/MapGeneration.cpp || cmake_object_order_depends_target_Project
   CONFIG = Debug
   DEP_FILE = CMakeFiles\Project.dir\src\MapGeneration.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -I"C:/BCIT/COMP 8522/sdl3_image/include" -I"C:/BCIT/COMP 8522/sdl3/include" -I"C:/BCIT/COMP 8522/sdl3_ttf/include" -I"C:/BCIT/COMP 8522/sdl3_mixer 3.1.0/include" -I"C:/BCIT/COMP 8522/GameEngine/src" -I"C:/BCIT/COMP 8522/GameEngine/src/utils" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs/system" -I"C:/BCIT/COMP 8522/GameEngine/src/vendor"
+  INCLUDES = -IC:/Dev/sdl3/include -IC:/Dev/sdl3_image/include -IC:/Dev/sdl3_ttf/include -I"C:/Dev/sdl3_mixer 3.1.0/include" -IC:/Users/Richa/CLionProjects/GameEngine/src -IC:/Users/Richa/CLionProjects/GameEngine/src/utils -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs/system -IC:/Users/Richa/CLionProjects/GameEngine/src/vendor
   OBJECT_DIR = CMakeFiles\Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Project.dir\src
 
-build CMakeFiles/Project.dir/src/ecs/system/PlatformSystem.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/BCIT/COMP$ 8522/GameEngine/src/ecs/system/PlatformSystem.cpp || cmake_object_order_depends_target_Project
+build CMakeFiles/Project.dir/src/ecs/system/PlatformSystem.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/Users/Richa/CLionProjects/GameEngine/src/ecs/system/PlatformSystem.cpp || cmake_object_order_depends_target_Project
   CONFIG = Debug
   DEP_FILE = CMakeFiles\Project.dir\src\ecs\system\PlatformSystem.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -I"C:/BCIT/COMP 8522/sdl3_image/include" -I"C:/BCIT/COMP 8522/sdl3/include" -I"C:/BCIT/COMP 8522/sdl3_ttf/include" -I"C:/BCIT/COMP 8522/sdl3_mixer 3.1.0/include" -I"C:/BCIT/COMP 8522/GameEngine/src" -I"C:/BCIT/COMP 8522/GameEngine/src/utils" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs" -I"C:/BCIT/COMP 8522/GameEngine/src/ecs/system" -I"C:/BCIT/COMP 8522/GameEngine/src/vendor"
+  INCLUDES = -IC:/Dev/sdl3/include -IC:/Dev/sdl3_image/include -IC:/Dev/sdl3_ttf/include -I"C:/Dev/sdl3_mixer 3.1.0/include" -IC:/Users/Richa/CLionProjects/GameEngine/src -IC:/Users/Richa/CLionProjects/GameEngine/src/utils -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs -IC:/Users/Richa/CLionProjects/GameEngine/src/ecs/system -IC:/Users/Richa/CLionProjects/GameEngine/src/vendor
   OBJECT_DIR = CMakeFiles\Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Project.dir\src\ecs\system
 
@@ -189,7 +189,7 @@ build Project.exe: CXX_EXECUTABLE_LINKER__Project_Debug CMakeFiles/Project.dir/s
   CONFIG = Debug
   FLAGS = -g
   LINK_LIBRARIES = -lSDL3  -lSDL3_image  -lSDL3_ttf  -lSDL3_mixer  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  LINK_PATH = -LC:/BCIT/COMP85~1/SDL3_I~1/lib   -LC:/BCIT/COMP85~1/sdl3/lib   -LC:/BCIT/COMP85~1/sdl3_ttf/lib   -LC:/BCIT/COMP85~1/SDL3_M~1.0/lib
+  LINK_PATH = -LC:/Dev/sdl3/lib   -LC:/Dev/sdl3_image/lib   -LC:/Dev/sdl3_ttf/lib   -LC:/Dev/SDL3_M~1.0/lib
   OBJECT_DIR = CMakeFiles\Project.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -202,7 +202,7 @@ build Project.exe: CXX_EXECUTABLE_LINKER__Project_Debug CMakeFiles/Project.dir/s
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\BCIT\COMP 8522\GameEngine\cmake-build-debug" && "C:\Program Files\JetBrains\CLion 2025.2.1\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\Richa\CLionProjects\GameEngine\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2025.2.4\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -213,7 +213,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\BCIT\COMP 8522\GameEngine\cmake-build-debug" && "C:\Program Files\JetBrains\CLion 2025.2.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -S"C:\BCIT\COMP 8522\GameEngine" -B"C:\BCIT\COMP 8522\GameEngine\cmake-build-debug""
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\Richa\CLionProjects\GameEngine\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2025.2.4\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\Richa\CLionProjects\GameEngine -BC:\Users\Richa\CLionProjects\GameEngine\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -231,14 +231,14 @@ build Project: phony Project.exe
 # =============================================================================
 
 #############################################
-# Folder: C:/BCIT/COMP 8522/GameEngine/cmake-build-debug
+# Folder: C:/Users/Richa/CLionProjects/GameEngine/cmake-build-debug
 
 build codegen: phony
 
 # =============================================================================
 
 #############################################
-# Folder: C:/BCIT/COMP 8522/GameEngine/cmake-build-debug
+# Folder: C:/Users/Richa/CLionProjects/GameEngine/cmake-build-debug
 
 build all: phony Project.exe
 
@@ -249,14 +249,14 @@ build all: phony Project.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja C$:/BCIT/COMP$ 8522/GameEngine/cmake-build-debug/cmake_install.cmake: RERUN_CMAKE | C$:/BCIT/COMP$ 8522/GameEngine/CMakeLists.txt C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.0.2/CMakeCCompiler.cmake CMakeFiles/4.0.2/CMakeCXXCompiler.cmake CMakeFiles/4.0.2/CMakeRCCompiler.cmake CMakeFiles/4.0.2/CMakeSystem.cmake
+build build.ninja C$:/Users/Richa/CLionProjects/GameEngine/cmake-build-debug/cmake_install.cmake: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/WindowsPaths.cmake C$:/Users/Richa/CLionProjects/GameEngine/CMakeLists.txt CMakeCache.txt CMakeFiles/4.0.2/CMakeCCompiler.cmake CMakeFiles/4.0.2/CMakeCXXCompiler.cmake CMakeFiles/4.0.2/CMakeRCCompiler.cmake CMakeFiles/4.0.2/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/BCIT/COMP$ 8522/GameEngine/CMakeLists.txt C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.1/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.0.2/CMakeCCompiler.cmake CMakeFiles/4.0.2/CMakeCXXCompiler.cmake CMakeFiles/4.0.2/CMakeRCCompiler.cmake CMakeFiles/4.0.2/CMakeSystem.cmake: phony
+build C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/WindowsPaths.cmake C$:/Users/Richa/CLionProjects/GameEngine/CMakeLists.txt CMakeCache.txt CMakeFiles/4.0.2/CMakeCCompiler.cmake CMakeFiles/4.0.2/CMakeCXXCompiler.cmake CMakeFiles/4.0.2/CMakeRCCompiler.cmake CMakeFiles/4.0.2/CMakeSystem.cmake: phony
 
 
 #############################################

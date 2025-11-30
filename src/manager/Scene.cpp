@@ -45,10 +45,22 @@ Scene::Scene(const char *sceneName, const char *mapPath, const int windowWidth, 
         // 20% Breakable
         plat.type = Platform::Type::Breakable;
         e.addComponent<BreakablePlatform>();
+
+
+        SDL_Texture *tex = TextureManager::load("../asset/gametiles.png");
+        SDL_FRect colSrc{0, 140, 120, 35};
+        SDL_FRect colDst{c.rect.x, c.rect.y, c.rect.w, c.rect.h};
+        e.addComponent<Sprite>(tex, colSrc, colDst);
+
     }
     else if (random > 0.8f) {
         // 20% Moving
         plat.type = Platform::Type::Moving;
+
+        SDL_Texture *tex = TextureManager::load("../asset/gametiles.png");
+        SDL_FRect colSrc{0, 105, 120, 35};
+        SDL_FRect colDst{c.rect.x, c.rect.y, c.rect.w, c.rect.h};
+        e.addComponent<Sprite>(tex, colSrc, colDst);
 
         auto &mp = e.addComponent<MovingPlatform>();
 
