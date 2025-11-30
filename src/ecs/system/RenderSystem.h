@@ -32,6 +32,10 @@ public:
                 auto &t = entity->getComponent<Transform>();
                 auto &sprite = entity->getComponent<Sprite>();
 
+                //For UI
+                //Causes issues and makes everything not spawn for some reason
+                // if (sprite.renderLayer != RenderLayer::UI) continue;
+
                 // Converting from world space to screen space
                 sprite.dst.x = t.position.x - cam.view.x;
                 sprite.dst.y = t.position.y - cam.view.y;

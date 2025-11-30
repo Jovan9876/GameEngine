@@ -10,11 +10,12 @@
 #include "Component.h"
 #include "Entity.h"
 
+#include <iostream>
 
 class KeyboardInputSystem {
 public:
 
-    void update(const std::vector<std::unique_ptr<Entity>>& entities, const SDL_Event& event) {
+    void update(const std::vector<std::unique_ptr<Entity>>& entities, const SDL_Event& event, bool &isPaused) {
         for (auto& e: entities) {
             if (e->hasComponent<PlayerTag>() && e->hasComponent<Velocity>()) {
                 auto& v = e->getComponent<Velocity>();
@@ -39,6 +40,11 @@ public:
 
                 if (event.type == SDL_EVENT_KEY_UP) {
                     switch (event.key.key) {
+                        case SDLK_P:
+                            //pause
+                            isPaused = !isPaused;
+                            std::cout << "Paused: " << isPaused << std::endl;
+                            break;
                         case SDLK_W:
                             v.direction.y = 0;
                             break;

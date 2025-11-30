@@ -14,9 +14,9 @@ void PrintCollisionObserver(const CollisionEvent &collision) {
             auto &colA = collision.entityA->getComponent<Collider>();
             auto &colB = collision.entityB->getComponent<Collider>();
 
-            std::cout << "A collision occurred between "
-                    << colA.tag << " and " << colB.tag
-                    << std::endl;
+            // std::cout << "A collision occurred between "
+            //         << colA.tag << " and " << colB.tag
+            //         << std::endl;
         }
     }
 }

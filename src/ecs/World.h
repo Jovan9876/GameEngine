@@ -24,7 +24,6 @@
 #include "ScreenWrapSystem.h"
 #include "UIRenderSystem.h"
 
-
 class World {
     Map map;
     std::vector<std::unique_ptr<Entity> > entities;
@@ -51,17 +50,21 @@ class World {
 public:
     World();
 
-    void update(float dt, const SDL_Event &event) {
-        keyboardInputSystem.update(entities, event);
-        movementSystem.update(entities, dt);
-        gravitySystem.update(entities, dt);
-        screenWrapSystem.update(entities);
-        collisionSystem.update(*this);
-        animationSystem.update(entities, dt);
-        cameraSystem.update(entities);
-        spawnTimerSystem.update(entities, dt);
-        destructionSystem.update(entities);
-        hudSystem.update(entities);
+    void update(float dt, const SDL_Event &event, bool &isPaused) {
+        keyboardInputSystem.update(entities, event, isPaused);
+
+        //Testing pause
+        if (!isPaused) {
+            movementSystem.update(entities, dt);
+            gravitySystem.update(entities, dt);
+            screenWrapSystem.update(entities);
+            collisionSystem.update(*this);
+            animationSystem.update(entities, dt);
+            cameraSystem.update(entities);
+            spawnTimerSystem.update(entities, dt);
+            destructionSystem.update(entities);
+            hudSystem.update(entities);
+        }
 
         //put this last
         preRenderSystem.update(entities);

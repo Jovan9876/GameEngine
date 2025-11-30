@@ -14,12 +14,26 @@
 class UIRenderSystem {
     public:
     void render(const std::vector<std::unique_ptr<Entity>>& entities) {
+
         for (auto& e : entities) {
             if (e->hasComponent<Transform>()) {
 
                 auto& transform = e->getComponent<Transform>();
 
-                // if (e->hasComponent<Sprite>()){}
+                if (e->hasComponent<Sprite>()) {
+                    // auto transform = e->getComponent<Transform>();
+                    auto sprite = e->getComponent<Sprite>();
+
+                    if (sprite.renderLayer != RenderLayer::UI) continue;
+
+                    sprite.dst.x = transform.position.x;
+                    sprite.dst.y = transform.position.y;
+
+                    if (sprite.visible) {
+                        SDL_FRect scaledDest = RenderUtils::getScaledDest(sprite.dst, transform.scale);
+                        TextureManager::draw(sprite.texture, &sprite.src, &scaledDest);
+                    }
+                }
 
                 if (e->hasComponent<Label>()) {
                     auto& label = e->getComponent<Label>();
