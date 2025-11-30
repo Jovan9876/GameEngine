@@ -4,45 +4,87 @@
 
 #include "Scene.h"
 #include "AssetManager.h"
+#include "MapGeneration.h"
 
 Scene::Scene(const char *sceneName, const char *mapPath, const int windowWidth, const int windowHeight) : name(sceneName) {
-    // Load our map
     world.setWindowSize(windowWidth, windowHeight);
-    world.getMap().load(mapPath, TextureManager::load("../asset/tileset.png"));
+
+    MapGeneration generator;
+    generator.minGapY = 60.0f;
+    generator.maxGapY = 120.0f;
+    generator.minWidth = 2;
+    generator.maxWidth = 5;
+    world.getMap().tileset = TextureManager::load("../asset/mario.png");
+    generator.generatePlatforms(world.getMap(), 25, 1000, 200);
+
+    // Create collider entities from map colliders
     for (auto &collider: world.getMap().colliders) {
-        auto &e = world.createEntity();
-        e.addComponent<Transform>(Vector2D(collider.rect.x, collider.rect.y), 0.0f, 1.0f);
-        auto &c = e.addComponent<Collider>("no_wall");
-        c.rect.x = collider.rect.x;
-        c.rect.y = collider.rect.y;
-        c.rect.w = collider.rect.w;
-        c.rect.h = collider.rect.h;
+    auto &e = world.createEntity();
 
-        // Add a visual of the colliders
-        SDL_Texture *tex = TextureManager::load("../asset/tileset.png");
-        SDL_FRect colSrc{0, 32, 32, 32};
-        SDL_FRect colDst{c.rect.x, c.rect.y, c.rect.w, c.rect.h};
+    auto &t = e.addComponent<Transform>(
+        Vector2D(collider.rect.x, collider.rect.y), 0.0f, 1.0f
+    );
 
-        e.addComponent<Sprite>(tex, colSrc, colDst);
+    auto &c = e.addComponent<Collider>("platform");
+    c.rect.x = collider.rect.x;
+    c.rect.y = collider.rect.y;
+    c.rect.w = collider.rect.w;
+    c.rect.h = collider.rect.h;
+
+    SDL_Texture *tex = TextureManager::load("../asset/gametiles.png");
+    SDL_FRect colSrc{0, 0, 120, 35};
+    SDL_FRect colDst{c.rect.x, c.rect.y, c.rect.w, c.rect.h};
+    e.addComponent<Sprite>(tex, colSrc, colDst);
+
+    auto &plat = e.addComponent<Platform>();
+
+        // Generate random number of platform types
+    float random = static_cast<float>(rand()) / RAND_MAX;
+
+    if (random < 0.2f) {
+        // 20% Breakable
+        plat.type = Platform::Type::Breakable;
+        e.addComponent<BreakablePlatform>();
     }
+    else if (random > 0.8f) {
+        // 20% Moving
+        plat.type = Platform::Type::Moving;
 
-    // Add coin items from itemSpawnPoints points
+        auto &mp = e.addComponent<MovingPlatform>();
+
+        // Use current tile center as middle point
+        Vector2D center = t.position;
+
+        // move tile left/right
+        mp.startPoint = center + Vector2D(-32.0f, 0.0f);
+        mp.endPoint   = center + Vector2D( 32.0f, 0.0f);
+
+        mp.speed   = 100.0f;
+        mp.moveToB = true;
+    }
+    else {
+        // Everything else is static/normal type
+        plat.type = Platform::Type::Static;
+    }
+}
+
+    // Add coin items from itemSpawns points
     SDL_Texture *coinTex = TextureManager::load("../asset/coin.png");
     SDL_FRect coinSrc{0, 0, 32, 32};
 
-    for (const auto &spawn: world.getMap().itemSpawnPoints) {
-        auto &coin = world.createEntity();
-
-        auto &transform = coin.addComponent<Transform>(Vector2D(spawn.x, spawn.y), 0.0f, 1.0f);
-        SDL_FRect coinDest{spawn.x, spawn.y, 32, 32};
-        coin.addComponent<Sprite>(coinTex, coinSrc, coinDest);
-
-        auto &c = coin.addComponent<Collider>("item");
-        c.rect.x = spawn.x;
-        c.rect.y = spawn.y;
-        c.rect.w = coinDest.w;
-        c.rect.h = coinDest.h;
-    }
+    // for (const auto &spawn: world.getMap().itemSpawns) {
+    //     auto &coin = world.createEntity();
+    //
+    //     auto &transform = coin.addComponent<Transform>(Vector2D(spawn.x, spawn.y), 0.0f, 1.0f);
+    //     SDL_FRect coinDest{spawn.x, spawn.y, 32, 32};
+    //     coin.addComponent<Sprite>(coinTex, coinSrc, coinDest);
+    //
+    //     auto &c = coin.addComponent<Collider>("item");
+    //     c.rect.x = spawn.x;
+    //     c.rect.y = spawn.y;
+    //     c.rect.w = coinDest.w;
+    //     c.rect.h = coinDest.h;
+    // }
 
     auto &cam = world.createEntity();
     SDL_FRect camView{};
@@ -50,15 +92,35 @@ Scene::Scene(const char *sceneName, const char *mapPath, const int windowWidth, 
     camView.h = windowHeight;
     cam.addComponent<Camera>(camView, world.getMap().width * 32, world.getMap().height * 32);
 
-    // Add entites
-    auto &player(world.createEntity());
-    auto &playerTransform = player.addComponent<Transform>(Vector2D(0, 0), 0.0f, 1.0f);
-    player.addComponent<Velocity>(Vector2D(0.0f, 0.0f), 240.0f);
+    // Makes it so the player spawns on top of a platform
+    float spawnY = world.getMap().height * 32 - 100;
+    Collider* spawnPlatform = nullptr;
 
+    for (auto& collider : world.getMap().colliders) {
+        if (collider.rect.y >= spawnY - 200 && collider.rect.y <= spawnY) {
+            spawnPlatform = &collider;
+            break;
+        }
+    }
+
+    auto &player(world.createEntity());
+    float playerStartX, playerStartY;
+
+    if (spawnPlatform) {
+        playerStartX = spawnPlatform->rect.x + (spawnPlatform->rect.w / 2) - 32;
+        playerStartY = spawnPlatform->rect.y - 64;
+    } else {
+        playerStartX = (world.getMap().width * 32) / 2;
+        playerStartY = 100;
+    }
+
+    auto &playerTransform = player.addComponent<Transform>(Vector2D(playerStartX, playerStartY), 0.0f, 1.0f);
+
+    player.addComponent<Velocity>(Vector2D(0.0f, 0.0f), 240.0f);
     Animation anim = AssetManager::getAnimation("player");
     player.addComponent<Animation>(anim);
 
-    SDL_Texture *tex = TextureManager::load("../asset/animations/vampire_anim.png");
+    SDL_Texture *tex = TextureManager::load("../asset/animations/CoatDoodle.png");
     SDL_FRect playerSrc = anim.clips[anim.currentClip].frameIndices[0];
     SDL_FRect playerDst{playerTransform.position.x, playerTransform.position.y, 64, 64};
     player.addComponent<Sprite>(tex, playerSrc, playerDst);
@@ -68,7 +130,7 @@ Scene::Scene(const char *sceneName, const char *mapPath, const int windowWidth, 
     playerCollider.rect.h = playerDst.h;
 
     player.addComponent<PlayerTag>();
-    player.addComponent<Gravity>(200.0f,200.0f);
+    player.addComponent<Gravity>(750.0f,750.0f);
 
     player.addComponent<ScreenWrap>(true, 0.0f);
 

@@ -44,6 +44,9 @@ add_executable(Project src/main.cpp
         src/manager/Scene.cpp
         src/manager/AudioManager.cpp
         src/Event/AudioEventQueue.h)
+        src/MapGeneration.cpp
+        src/ecs/system/PlatformSystem.cpp
+)
 
 
 target_link_libraries(Project

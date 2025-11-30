@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 C:/BCIT/COMP 8522/GameEngine/cmake-build-debug/CMakeFiles/Project.dir
 C:/BCIT/COMP 8522/GameEngine/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/BCIT/COMP 8522/GameEngine/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+=======
+C:/Users/Trevo/OneDrive/Documents/GitHub/GameEngine/cmake-build-debug/CMakeFiles/Project.dir
+C:/Users/Trevo/OneDrive/Documents/GitHub/GameEngine/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Trevo/OneDrive/Documents/GitHub/GameEngine/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+>>>>>>> origin/dev

@@ -21,6 +21,7 @@
 #include "GravitySystem.h"
 #include "HUDSystem.h"
 #include "PreRenderSystem.h"
+#include "PlatformSystem.h"
 #include "ScreenWrapSystem.h"
 #include "UIRenderSystem.h"
 #include "Event/AudioEventQueue.h"
@@ -40,6 +41,7 @@ class World {
     DestructionSystem destructionSystem;
     GravitySystem gravitySystem;
     ScreenWrapSystem screenWrapSystem;
+    PlatformSystem platformSystem;
     int windowWidth{0};
     int windowHeight{0};
 

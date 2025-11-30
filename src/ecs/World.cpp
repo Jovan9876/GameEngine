@@ -71,6 +71,54 @@ World::World() {
             t.position = t.oldPosition;
         }
 
+        player = nullptr;
+        Entity* platform = nullptr;
+
+        if (colliderA.tag == "player" && colliderB.tag == "platform") {
+            player   = collision.entityA;
+            platform = collision.entityB;
+        } else if (colliderA.tag == "platform" && colliderB.tag == "player") {
+            platform = collision.entityA;
+            player   = collision.entityB;
+        }
+
+        //player vs platform
+        if (player && platform) {
+            // Need gravity + colliders + platform component
+            if (!(player->hasComponent<Gravity>() && player->hasComponent<Collider>() &&
+                  platform->hasComponent<Collider>() && platform->hasComponent<Platform>())) {
+                return;
+            }
+
+            auto& playerGravity = player->getComponent<Gravity>();
+            auto& playerCollider = player->getComponent<Collider>();
+            auto& platformCollider = platform->getComponent<Collider>();
+            auto& platformComponent = platform->getComponent<Platform>();
+
+            float playerBottom = playerCollider.rect.y + playerCollider.rect.h;
+            float platformTop  = platformCollider.rect.y;
+            const float tolerance = 5.0f;
+
+            bool fromAbove = (playerBottom <= platformTop + tolerance);
+
+            // SDL: y+ is down, so falling means currentVelY > 0
+            if (fromAbove && playerGravity.currentVelY > 0.0f) {
+                //upward bounce using maxaccel
+                playerGravity.currentVelY = -playerGravity.maxAccel;
+
+                if (platformComponent.type == Platform::Type::Breakable &&
+                    platform->hasComponent<BreakablePlatform>()) {
+
+                    auto& br = platform->getComponent<BreakablePlatform>();
+                    if (!br.triggered) {
+                        br.triggered = true;
+                        br.timer = 0.0f;
+                    }
+                }
+            }
+
+        }
+
         // Player vs projectile
         if (colliderA.tag == "player" && colliderB.tag == "projectile") {
             player = collision.entityA;
@@ -85,6 +133,7 @@ World::World() {
             // Change scenes defer
             Game::onSceneChangeRequest("gameover");
         }
+
     });
 
     eventManager.subscribe(PrintCollisionObserver);

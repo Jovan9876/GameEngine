@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Install script for directory: C:/BCIT/COMP 8522/GameEngine
+=======
+# Install script for directory: C:/Users/Trevo/OneDrive/Documents/GitHub/GameEngine
+>>>>>>> origin/dev
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,7 +44,11 @@ endif()
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
+<<<<<<< HEAD
   file(WRITE "C:/BCIT/COMP 8522/GameEngine/cmake-build-debug/install_local_manifest.txt"
+=======
+  file(WRITE "C:/Users/Trevo/OneDrive/Documents/GitHub/GameEngine/cmake-build-debug/install_local_manifest.txt"
+>>>>>>> origin/dev
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -56,6 +64,10 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+<<<<<<< HEAD
   file(WRITE "C:/BCIT/COMP 8522/GameEngine/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+=======
+  file(WRITE "C:/Users/Trevo/OneDrive/Documents/GitHub/GameEngine/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+>>>>>>> origin/dev
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
