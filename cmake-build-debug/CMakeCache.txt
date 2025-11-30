@@ -258,6 +258,9 @@ Project_SOURCE_DIR:STATIC=C:/BCIT/COMP 8522/GameEngine
 SDL3_IMAGE_PATH:PATH=C:/BCIT/COMP 8522/sdl3
 
 //No help, variable specified on the command line.
+SDL3_MIXER_PATH:PATH=C:/BCIT/COMP 8522/sdl3_mixer 3.1.0
+
+//No help, variable specified on the command line.
 SDL3_PATH:PATH=C:/BCIT/COMP 8522/sdl3_image
 
 //No help, variable specified on the command line.
