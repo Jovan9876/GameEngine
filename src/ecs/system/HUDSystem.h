@@ -57,7 +57,7 @@ public:
                     //     scoreTracker.score = static_cast<int>(scoreTracker.maxHeight / 10);
                     // };
                     // ss << "Player position aka Score" << playerTransform.position.y;
-                    ss << "Player position aka Score: " << scoreTracker.score;
+                    ss << "Score: " << scoreTracker.score;
                     label.text = ss.str();
                     label.dirty = true;
                 }
