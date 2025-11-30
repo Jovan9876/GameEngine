@@ -61,6 +61,12 @@ void Game::init(const char *title, int width, int height, bool fullscreen) {
     } else {
         isRunning = false;
     }
+    //load audio
+    audioManager.loadAudio("theme", "../asset/audio/switch_with_me.ogg");
+    audioManager.loadAudio("collect", "../asset/audio/coin.ogg");
+
+    audioManager.playMusic("theme");
+
     //load fonts
     AssetManager::loadFont("arial", "../asset/fonts/arial.ttf", 16);
 

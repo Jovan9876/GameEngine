@@ -23,6 +23,7 @@
 #include "PreRenderSystem.h"
 #include "ScreenWrapSystem.h"
 #include "UIRenderSystem.h"
+#include "Event/AudioEventQueue.h"
 
 class World {
     Map map;
@@ -47,6 +48,9 @@ class World {
     HUDSystem hudSystem;
     PreRenderSystem preRenderSystem;
 
+    //Audio
+    AudioEventQueue audioEventQueue;
+
 public:
     World();
 
@@ -66,6 +70,7 @@ public:
             hudSystem.update(entities);
         }
 
+        audioEventQueue.process();
         //put this last
         preRenderSystem.update(entities);
 
@@ -127,6 +132,9 @@ public:
             defferedEntities.clear();
         };
     }
+
+    //For Audio
+    AudioEventQueue& getAudioEventQueue(){return audioEventQueue;};
 
     EventManager &getEventManager() { return eventManager; }
     Map &getMap() { return map; }
