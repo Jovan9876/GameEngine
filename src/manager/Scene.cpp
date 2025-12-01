@@ -19,66 +19,65 @@ Scene::Scene(const char *sceneName, const char *mapPath, const int windowWidth, 
 
     // Create collider entities from map colliders
     for (auto &collider: world.getMap().colliders) {
-    auto &e = world.createEntity();
+        auto &e = world.createEntity();
 
-    auto &t = e.addComponent<Transform>(
-        Vector2D(collider.rect.x, collider.rect.y), 0.0f, 1.0f
-    );
+        auto &t = e.addComponent<Transform>(
+            Vector2D(collider.rect.x, collider.rect.y), 0.0f, 1.0f
+        );
 
-    auto &c = e.addComponent<Collider>("platform");
-    c.rect.x = collider.rect.x;
-    c.rect.y = collider.rect.y;
-    c.rect.w = collider.rect.w;
-    c.rect.h = collider.rect.h;
+        auto &c = e.addComponent<Collider>("platform");
+        c.rect.x = collider.rect.x;
+        c.rect.y = collider.rect.y;
+        c.rect.w = collider.rect.w;
+        c.rect.h = collider.rect.h;
 
-    SDL_Texture *tex = TextureManager::load("../asset/gametiles.png");
-    SDL_FRect colSrc{0, 0, 120, 35};
-    SDL_FRect colDst{c.rect.x, c.rect.y, c.rect.w, c.rect.h};
-    e.addComponent<Sprite>(tex, colSrc, colDst);
+        SDL_Texture *tex = TextureManager::load("../asset/gametiles.png");
+        SDL_FRect colSrc{0, 0, 120, 35};
+        SDL_FRect colDst{c.rect.x, c.rect.y, c.rect.w, c.rect.h};
+        e.addComponent<Sprite>(tex, colSrc, colDst);
 
-    auto &plat = e.addComponent<Platform>();
+        auto &plat = e.addComponent<Platform>();
 
         // Generate random number of platform types
-    float random = static_cast<float>(rand()) / RAND_MAX;
+        float random = static_cast<float>(rand()) / RAND_MAX;
+        std::cout << random << std::endl;
 
-    if (random < 0.2f) {
-        // 20% Breakable
-        plat.type = Platform::Type::Breakable;
-        e.addComponent<BreakablePlatform>();
+        if (random < 0.3f) {
+            plat.type = Platform::Type::Breakable;
+            e.addComponent<BreakablePlatform>();
 
 
-        SDL_Texture *tex = TextureManager::load("../asset/gametiles.png");
-        SDL_FRect colSrc{0, 140, 120, 35};
-        SDL_FRect colDst{c.rect.x, c.rect.y, c.rect.w, c.rect.h};
-        e.addComponent<Sprite>(tex, colSrc, colDst);
+            SDL_Texture *tex = TextureManager::load("../asset/gametiles.png");
+            SDL_FRect colSrc{0, 140, 120, 35};
+            SDL_FRect colDst{c.rect.x, c.rect.y, c.rect.w, c.rect.h};
+            e.addComponent<Sprite>(tex, colSrc, colDst);
 
+        }
+        else if (random > 0.6f) {
+            plat.type = Platform::Type::Moving;
+
+            SDL_Texture *tex = TextureManager::load("../asset/gametiles.png");
+            SDL_FRect colSrc{0, 105, 120, 35};
+            SDL_FRect colDst{c.rect.x, c.rect.y, c.rect.w, c.rect.h};
+            e.addComponent<Sprite>(tex, colSrc, colDst);
+
+            auto &mp = e.addComponent<MovingPlatform>();
+
+            // Use current tile center as middle point
+            Vector2D center = t.position;
+
+            // move tile left/right
+            mp.startPoint = center + Vector2D(-32.0f, 0.0f);
+            mp.endPoint   = center + Vector2D( 32.0f, 0.0f);
+
+            mp.speed   = 100.0f;
+            mp.moveToB = true;
+        }
+        else {
+            // Everything else is static/normal type
+            plat.type = Platform::Type::Static;
+        }
     }
-    else if (random > 0.8f) {
-        // 20% Moving
-        plat.type = Platform::Type::Moving;
-
-        SDL_Texture *tex = TextureManager::load("../asset/gametiles.png");
-        SDL_FRect colSrc{0, 105, 120, 35};
-        SDL_FRect colDst{c.rect.x, c.rect.y, c.rect.w, c.rect.h};
-        e.addComponent<Sprite>(tex, colSrc, colDst);
-
-        auto &mp = e.addComponent<MovingPlatform>();
-
-        // Use current tile center as middle point
-        Vector2D center = t.position;
-
-        // move tile left/right
-        mp.startPoint = center + Vector2D(-32.0f, 0.0f);
-        mp.endPoint   = center + Vector2D( 32.0f, 0.0f);
-
-        mp.speed   = 100.0f;
-        mp.moveToB = true;
-    }
-    else {
-        // Everything else is static/normal type
-        plat.type = Platform::Type::Static;
-    }
-}
 
     // Add coin items from itemSpawns points
     SDL_Texture *coinTex = TextureManager::load("../asset/coin.png");

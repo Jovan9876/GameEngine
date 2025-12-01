@@ -65,6 +65,7 @@ public:
             gravitySystem.update(entities, dt);
             screenWrapSystem.update(entities);
             collisionSystem.update(*this);
+            platformSystem.update(entities, dt);
             animationSystem.update(entities, dt);
             cameraSystem.update(entities);
             spawnTimerSystem.update(entities, dt);
