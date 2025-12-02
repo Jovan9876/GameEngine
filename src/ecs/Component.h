@@ -11,6 +11,9 @@
 #include <string>
 #include <unordered_map>
 
+#include "SDL3_ttf/SDL_ttf.h"
+#include "Entity.h"
+
 
 struct Transform {
     Vector2D position{};
@@ -25,10 +28,19 @@ struct Velocity {
     float speed{};
 };
 
+//For UI
+enum class RenderLayer {
+    World,
+    UI
+};
+
 struct Sprite {
     SDL_Texture* texture = nullptr;
     SDL_FRect src{};
     SDL_FRect dst{};
+    //For UI
+    RenderLayer renderLayer = RenderLayer::World;
+    bool visible = true;
 };
 
 struct Collider {
@@ -59,6 +71,7 @@ struct Camera {
     SDL_FRect view;
     float worldWidth{};
     float worldHeight{};
+    float maxY;
 };
 
 struct TimedSpawner {
@@ -72,8 +85,73 @@ struct SceneState {
     int coinsCollected = 0;
 };
 
+//For UI
+struct Clickable {
+    std::function<void()> onPressed{};
+    std::function<void()> onReleased{};
+    std::function<void()> onCancelled{};
+    bool pressed = false;
+};
+
+struct Parent {
+    Entity* parent = nullptr;
+};
+
+struct Children {
+    std::vector<Entity*> children{};
+};
+
+enum class LabelType {
+    Score,
+    PlayerHeight
+};
+
+struct Label {
+    std::string text{};
+    //font maybe
+    TTF_Font* font = nullptr;
+    SDL_Color color{};
+    LabelType type = LabelType::Score;
+    std::string textureCacheKey{};
+    SDL_Texture* texture = nullptr;
+    SDL_FRect dst{};
+    bool visible = true;
+    bool dirty = false;
+};
+
+struct ScoreTracker {
+    float maxHeight = 0.0f;
+    int score = 0;
+};
+
 struct PlayerTag {};
 
 struct ProjectileTag {};
+
+struct Platform {
+    enum class Type {
+        Static,
+        Moving,
+        Breakable
+    };
+
+    Type type = Type::Static;
+};
+
+struct MovingPlatform {
+    Vector2D startPoint{};
+    Vector2D endPoint{};
+    float speed{};
+    bool moveToB = true;
+};
+
+struct BreakablePlatform {
+    float breakDelay = 0.2f;
+    float destroyDelay = 0.4f;
+
+    bool triggered = false;
+    bool broken = false;
+    float timer = 0.0f;
+};
 
 #endif //PROJECT_COMPONENT_H

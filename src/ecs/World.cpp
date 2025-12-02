@@ -71,6 +71,64 @@ World::World() {
             t.position = t.oldPosition;
         }
 
+        player = nullptr;
+        Entity* platform = nullptr;
+
+        if (colliderA.tag == "player" && colliderB.tag == "platform") {
+            player   = collision.entityA;
+            platform = collision.entityB;
+        } else if (colliderA.tag == "platform" && colliderB.tag == "player") {
+            platform = collision.entityA;
+            player   = collision.entityB;
+        }
+
+        // player vs platform
+        if (player && platform) {
+            // Need gravity + transform + collider + platform components
+          if (!(player->hasComponent<Gravity>()   &&
+                player->hasComponent<Transform>() &&
+                player->hasComponent<Collider>()  &&
+                platform->hasComponent<Collider>() &&
+                platform->hasComponent<Platform>())) {
+              return;
+          }
+
+          auto &playerGravity    = player->getComponent<Gravity>();
+          auto &playerTransform  = player->getComponent<Transform>();
+          auto &playerCollider   = player->getComponent<Collider>();
+          auto &platformCollider = platform->getComponent<Collider>();
+          auto &platformComponent= platform->getComponent<Platform>();
+
+          float prevBottom  = playerTransform.oldPosition.y + playerCollider.rect.h;
+          float newBottom   = playerTransform.position.y    + playerCollider.rect.h;
+          float platformTop = platformCollider.rect.y;
+
+         // Check that we're above plat
+          bool crossedTop = (prevBottom <= platformTop) && (newBottom >= platformTop);
+
+          // SDL: y+ is down, so falling means currentVelY > 0
+          if (crossedTop && playerGravity.currentVelY > 0.0f) {
+
+              // Snap player onto platform, to correct fall through
+              playerTransform.position.y = platformTop - playerCollider.rect.h;
+              playerCollider.rect.y      = playerTransform.position.y;
+
+             // Bounce
+              playerGravity.currentVelY = -playerGravity.maxAccel;
+
+             // Breakable usable once
+              if (platformComponent.type == Platform::Type::Breakable &&
+                  platform->hasComponent<BreakablePlatform>()) {
+
+                  auto &br = platform->getComponent<BreakablePlatform>();
+                  if (!br.triggered) {
+                      br.triggered = true;
+                      br.timer    = 0.0f;
+                  }
+              }
+          }
+        }
+
         // Player vs projectile
         if (colliderA.tag == "player" && colliderB.tag == "projectile") {
             player = collision.entityA;
@@ -85,7 +143,34 @@ World::World() {
             // Change scenes defer
             Game::onSceneChangeRequest("gameover");
         }
+
     });
 
     eventManager.subscribe(PrintCollisionObserver);
+}
+
+void World::checkFallOffScreen(const std::vector<std::unique_ptr<Entity>>& entities) {
+    Entity *playerEntity = nullptr;
+
+    for (auto &e: entities) {
+        if (e->hasComponent<PlayerTag>()) {
+            playerEntity = e.get();
+            break;
+        }
+    }
+
+    for (auto &e: entities) {
+        if (e->hasComponent<Camera>()) {
+            auto &cam = e->getComponent<Camera>();
+            //Check game over
+            float cameraBottom = cam.view.y + cam.view.h;
+
+            if (playerEntity->getComponent<Transform>().position.y > cameraBottom) {
+                std::cout << "Game Over\n";
+                Game::onSceneChangeRequest("gameover");
+            }
+        }
+    }
+
+
 }

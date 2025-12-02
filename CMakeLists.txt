@@ -7,9 +7,13 @@ set(CMAKE_CXX_STANDARD 20)
 if (WIN32)
     set(SDL3_PATH "C:/Dev/sdl3" CACHE PATH "Path to SDL3 root directory")
     set(SDL3_IMAGE_PATH "C:/Dev/sdl3_image" CACHE PATH "Path to SDL3_image root directory")
+    set(SDL3_TTF_Path "C:/Dev/sdl3_ttf" CACHE PATH "Path to SDL3_ttf root directory")
+    set(SDL3_MIXER_PATH "C:/Dev/sdl3_mixer 3.1.0" CACHE PATH "Path to SDL3_mixer root directory")
     include_directories(
             ${SDL3_PATH}/include
             ${SDL3_IMAGE_PATH}/include
+            ${SDL3_TTF_Path}/include
+            ${SDL3_MIXER_PATH}/include
             ${PROJECT_SOURCE_DIR}/src
             ${PROJECT_SOURCE_DIR}/src/utils
             ${PROJECT_SOURCE_DIR}/src/ecs
@@ -19,6 +23,8 @@ if (WIN32)
     link_directories(
             ${SDL3_PATH}/lib
             ${SDL3_IMAGE_PATH}/lib
+            ${SDL3_TTF_Path}/lib
+            ${SDL3_MIXER_PATH}/lib
     )
 endif ()
 
@@ -35,10 +41,17 @@ add_executable(Project src/main.cpp
         src/utils/CollisionObservers.cpp
         src/vendor/tinyxml2.cpp
         src/manager/AssetManager.cpp
-        src/manager/Scene.cpp)
+        src/manager/Scene.cpp
+        src/manager/AudioManager.cpp
+        src/Event/AudioEventQueue.h
+        src/MapGeneration.cpp
+        src/ecs/system/PlatformSystem.cpp
+)
 
 
 target_link_libraries(Project
         SDL3
         SDL3_image
+        SDL3_ttf
+        SDL3_mixer
 )
