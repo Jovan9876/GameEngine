@@ -46,17 +46,8 @@ public:
                         float heightDifference = scoreTracker.maxHeight - playerTransform.position.y;
                         scoreTracker.maxHeight = playerTransform.position.y;
                         scoreTracker.score += static_cast<int>(heightDifference / 5);
-                        //update score
-                        // scoreTracker.maxHeight = playerTransform.position.y;
-                        // scoreTracker.score = static_cast<int>(scoreTracker.maxHeight / 10);
                     };
 
-                    // if (playerTransform.position.y > scoreTracker.maxHeight) {
-                    //     //update score
-                    //     scoreTracker.maxHeight = playerTransform.position.y;
-                    //     scoreTracker.score = static_cast<int>(scoreTracker.maxHeight / 10);
-                    // };
-                    // ss << "Player position aka Score" << playerTransform.position.y;
                     ss << "Score: " << scoreTracker.score;
                     label.text = ss.str();
                     label.dirty = true;

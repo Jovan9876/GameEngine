@@ -97,11 +97,12 @@ Scene::Scene(const char *sceneName, const char *mapPath, const int windowWidth, 
     //     c.rect.h = coinDest.h;
     // }
 
-    auto &cam = world.createEntity();
-    SDL_FRect camView{};
-    camView.w = windowWidth;
-    camView.h = windowHeight;
-    cam.addComponent<Camera>(camView, world.getMap().width * 32, world.getMap().height * 32);
+    // auto &cam = world.createEntity();
+    // SDL_FRect camView{};
+    // camView.w = windowWidth;
+    // camView.h = windowHeight;
+    // float maxY = playerTransform.position.y - camView.h / 2;
+    // cam.addComponent<Camera>(camView, world.getMap().width * 32, world.getMap().height * 32);
 
     // Makes it so the player spawns on top of a platform
     float spawnY = world.getMap().height * 32 - 100;
@@ -126,6 +127,14 @@ Scene::Scene(const char *sceneName, const char *mapPath, const int windowWidth, 
     }
 
     auto &playerTransform = player.addComponent<Transform>(Vector2D(playerStartX, playerStartY), 0.0f, 1.0f);
+
+    //Camera
+    auto &cam = world.createEntity();
+    SDL_FRect camView{};
+    camView.w = windowWidth;
+    camView.h = windowHeight;
+    float maxY = playerTransform.position.y - camView.h / 2;
+    cam.addComponent<Camera>(camView, world.getMap().width * 32, world.getMap().height * 32, maxY);
 
     player.addComponent<Velocity>(Vector2D(0.0f, 0.0f), 240.0f);
     Animation anim = AssetManager::getAnimation("player");

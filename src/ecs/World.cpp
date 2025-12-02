@@ -148,3 +148,29 @@ World::World() {
 
     eventManager.subscribe(PrintCollisionObserver);
 }
+
+void World::checkFallOffScreen(const std::vector<std::unique_ptr<Entity>>& entities) {
+    Entity *playerEntity = nullptr;
+
+    for (auto &e: entities) {
+        if (e->hasComponent<PlayerTag>()) {
+            playerEntity = e.get();
+            break;
+        }
+    }
+
+    for (auto &e: entities) {
+        if (e->hasComponent<Camera>()) {
+            auto &cam = e->getComponent<Camera>();
+            //Check game over
+            float cameraBottom = cam.view.y + cam.view.h;
+
+            if (playerEntity->getComponent<Transform>().position.y > cameraBottom) {
+                std::cout << "Game Over\n";
+                Game::onSceneChangeRequest("gameover");
+            }
+        }
+    }
+
+
+}

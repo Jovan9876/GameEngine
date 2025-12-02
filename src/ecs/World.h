@@ -53,6 +53,9 @@ class World {
     //Audio
     AudioEventQueue audioEventQueue;
 
+    bool cameraInitialized = false;
+    void checkFallOffScreen(const std::vector<std::unique_ptr<Entity>>& entities);
+
 public:
     World();
 
@@ -71,6 +74,13 @@ public:
             spawnTimerSystem.update(entities, dt);
             destructionSystem.update(entities);
             hudSystem.update(entities);
+
+            if (cameraInitialized) {
+                checkFallOffScreen(entities);
+            } else {
+                cameraInitialized = true;
+            }
+            // checkFallOffScreen(entities);
         }
 
         audioEventQueue.process();
